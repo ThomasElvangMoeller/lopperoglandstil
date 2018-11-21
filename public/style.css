@@ -1,59 +1,39 @@
-/* =================== LAYOUT SECTION ================== */
 
+html, body {
+  height: 100%;
+  margin: 0px;
+}
 body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fff8f8;
+  background-color: #fffafa;
 }
 
-#headerimg {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
+/* =================== HEADER SECTION ================== */
+
+.headerimage {
   height: 80%;
   width: 100%;
-  object-fit: cover;
+  background: linear-gradient(transparent 90%, #fffafa), url("imgs/odderAvis1.jpg") no-repeat;
+  background-size: cover;
+  background-position: 200px, 0px;
 }
-#headerimg-katalog {
-  /*position: absolute;*/
-  /*top: 0px;*/
-  /*left: 0px;*/
-  z-index: -1;
+.headerimage-katalog {
+  height: 30%;
   width: 100%;
-  /*object-fit: cover;*/
+  background: linear-gradient(transparent 80%,#fffafa), url("imgs/odderAvis8.jpg") no-repeat;
+  background-size: cover;
+  background-position: 200px, 0px;
 }
 
-.headerpicture {
+.navbar {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: -1;
-  height: 600px;
+  z-index: +1;
   width: 100%;
-  overflow: hidden;
 }
-.headerpicture-katalog {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
-  height: 600px;
-  width: 100%;
-  overflow: hidden;
-}
-
-#headerimg-katalog {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
-  height: 50%;
-  width: 100%;
-  object-fit: cover;
-}
-
 nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -61,26 +41,21 @@ nav {
   align-items: center;
   text-align: center;
   margin: 40px 10%;
-
 }
 
-
-.logo {
-  background-position: center;
-  background-size: contain;
+nav .logo {
   height: 150px;
   margin: 5px;
 }
 
-
-.navLinks {
+nav .navLinks {
   padding: 10px;
   background-color: hsla(28, 100%, 86%, 0.70);
   max-height: 25px;
   min-height: 25px;
 }
 
-.navLinks a {
+nav .navLinks a {
   font-size: 1.2em;
   text-transform: uppercase;
   text-decoration: none;
@@ -88,57 +63,13 @@ nav {
   width: 100%;
 }
 
-.navLinks a:hover {
+nav .navLinks a:hover {
   border-left: 2px solid whitesmoke;
   border-right: 2px solid whitesmoke;
   padding: 0.5em;
 }
 
-
-#gradientFade {
-  background: linear-gradient(rgb(210,180,140, 0), #fffafa);
-  position: absolute;
-  top: 73%;
-  left: 0px;
-  width: 100%;
-  height: 7%;
-}
-#gradientFade-katalog {
-  background: linear-gradient(rgb(210,180,140, 0), #fffafa);
-  position: absolute;
-  top: 73%;
-  left: 0px;
-  width: 100%;
-  height: 7%;
-}
-
-.grid-katalog {
-  display: grid;
-  grid-template-areas: 'left middle ';
-}
-.product-menu {
-  float: left;
-  height: 400px;
-  width: 300px;
-  background-color: red;
-}
-
-.products {
-  height: 600px;
-  background-color: green;
-
-}
-
-.menu-content {
-
-}
-
-.produkter.content{
-
-}
-
-
-
+/* =================== INDEX SECTION ================== */
 
 #content {
   position: absolute;
@@ -190,4 +121,31 @@ nav {
   box-shadow: 0px 0px 8px #fff;
 }
 
-/* =================== LAYOUT SECTION ================== */
+/* =================== KATALOG SECTION ================== */
+
+
+
+.grid-katalog {
+  display: grid;
+  grid-template-areas: 'left middle ';
+}
+.product-menu {
+  float: left;
+  height: 400px;
+  width: 300px;
+  background-color: red;
+}
+
+.products {
+  height: 600px;
+  background-color: green;
+
+}
+
+.menu-content {
+
+}
+
+.produkter.content{
+
+}
