@@ -1,18 +1,23 @@
 "use strict";
 
-const Produkt = require("../models/Produkt");
+const Product = require("../models/Product");
 
 // Create a product and save it to the database
-// TODO
-exports.createProdukt = () => {
-  let produkt = new Produkt({
-    
+exports.createProduct = (name, desc, amount, pics, categories, price, discount) => {
+  let product = new Product({
+    name: name,
+    description: desc,
+    amount: amount, 
+    pictures: pics,
+    categories: categories,
+    price: price,
+    discount: discount
   });
-  return produkt.save();
+  return product.save();
 };
 
 // Find and return all products in the database
 // TODO
-exports.getProdukts = () => {
-  return Produkt.find().exec();
+exports.getProducts = () => {
+  return Product.find().exec();
 };
