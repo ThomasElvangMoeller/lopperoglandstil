@@ -4,9 +4,10 @@ const router = express.Router();
 
 // TODO
 router.get('/', function (req, res) {
-    //Login page 
+    //Login page
+
     res.send(`Login page`);
-}) 
+});
 
 // TODO
 router.get('/session', function (req, res) {
