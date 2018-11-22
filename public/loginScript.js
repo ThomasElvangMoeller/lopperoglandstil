@@ -6,14 +6,15 @@ onload = () => {
 
     button.onclick = async () => {
         const data = {name: name.value, password: password.value};
-        const result = await fetch("/login", {
+        const result = await fetch("/admin", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {'Content-Type': 'application/json'}
+
         });
         const answer = await result.json();
         if(answer.ok){
-            window.location.href = '/session';
+            window.location.href = '/admin/session';
         } else {
             error.innerHTML = 'Brugernavn eller kodeord er forkert';
         }

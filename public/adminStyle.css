@@ -54,3 +54,12 @@ body{
 #button:hover{
     opacity: 0.8;
 }
+
+#loginContent #wrongInput{
+    grid-column: 2/4;
+    grid-row: 4/5;
+    text-align: left;
+}
+#error{
+    color: red;
+}

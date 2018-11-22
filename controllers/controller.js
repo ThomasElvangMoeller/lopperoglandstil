@@ -32,6 +32,6 @@ exports.createLogin = (username, password) => {
 
 // Find and return all logins in the database
 // TODO
-exports.getLogins = () => {
-    return Login.find().exec();
+exports.getLogins = (name,pass) => {
+    return Login.find({username: name, password: pass}).exec();
 };
