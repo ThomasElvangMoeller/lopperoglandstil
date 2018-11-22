@@ -30,7 +30,7 @@ console.log('input name: ' + name + password)
     router.get('/session', function (req, res) {
         const name = req.session.name;
         if(name) {
-            res.render(`session.hbs`,{name});
+            res.send(`adminSite`,{name});
         }else{
             res.render('loginFail')
         }
