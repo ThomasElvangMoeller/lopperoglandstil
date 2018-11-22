@@ -30,7 +30,7 @@ console.log('input name: ' + name + password)
     router.get('/session', function (req, res) {
         const name = req.session.name;
         if(name) {
-            res.render(`session.hbs`);
+            res.render(`session.hbs`,{name});
         }else{
             res.render('loginFail')
         }
@@ -43,7 +43,7 @@ console.log('input name: ' + name + password)
             if (err) {
                 console.log(err);
             } else {
-                res.redirect('/');
+                res.redirect('/admin');
             }
         });
     });
