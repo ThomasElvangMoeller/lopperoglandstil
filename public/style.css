@@ -125,27 +125,123 @@ nav .navLinks a:hover {
 
 
 
-.grid-katalog {
-  display: grid;
-  grid-template-areas: 'left middle ';
+.container {
+  display: table;
+  width: 100%;
+
 }
 .product-menu {
-  float: left;
-  height: 400px;
-  width: 300px;
+  display: table-cell;
+  width: 20%;
+  height: 500px;
   background-color: red;
 }
 
 .products {
-  height: 600px;
-  background-color: green;
-
+  height: 200px;
+  display: table-cell;
+  width: 80%;
+  background-color: #fffafa;
 }
 
 .menu-content {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  height: 100%; /* Full height */
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+.menu-content li a {
+  display: block;
+  width: 150px;
+  background-color: #dddddd;
+  font-size: larger;
+  padding-left: 20px;
+}
+
+.menu-content li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.menu-content li a:active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.products-content {
+  float: left;
+  /*background-color: rgba(0,0,0,0.05);*/
+  width: 25%;
+  margin: 10px;
+  border: 1px #dddddd solid;
+}
+
+.product-picturebox{
+  width: 95%;
+  margin: 2.5%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-picture {
+  height: 180px;
+  opacity: 1;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0px;
+  /*left: 16px;*/
+  font-size: 16px;
+  z-index: +1;
+  background: rgba(255,255,255,0.5);
+  width: 100%;
+  height: 20%;
+  text-align: left;
+  padding-left: 3%;
+}
+
+.product-name {
+  margin-top: 5px;
+  color: black;
+}
+
+.products-name {
 
 }
 
-.produkter.content{
+.products-price-reservation {
+  display: table;
+  width: 90%;
+  margin-top: 3%;
+  padding: 5px 5% 5px 5%;
+  border-top: 1px #dddddd solid;
+}
 
+.products-price {
+  display: table-cell;
+  width: 80%;
+}
+
+.pruducts-reservation {
+  display: table-cell;
+  width: 20%;
+
+}
+
+.reservation {
+  padding: 3px 15px 3px 15px;
+  background: linear-gradient(transparent 35%, black), green;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.reservation:hover, .reservation:active {
+  background: linear-gradient(transparent 35%, #424242), green;
 }
