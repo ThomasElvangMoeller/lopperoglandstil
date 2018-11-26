@@ -289,7 +289,7 @@ nav .navLinks a:hover {
     grid-gap: 10px;
   }
   .product-container .main-product-picture {
-    grid-column: 2/3;
+    grid-column: 1/4;
     min-width: 400px;
   }
 
