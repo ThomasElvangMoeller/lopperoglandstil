@@ -33,7 +33,7 @@ exports.updateProduct = (id, reqbody) => {
   updates.updated = Date.now();
 
   if (reqbody.name) { updates.name = reqbody.name};
-  if (reqbody.desc) { updates.desc = reqbody.desc};
+  if (reqbody.desc) { updates.description = reqbody.desc};
   if (reqbody.amount) { updates.amount = reqbody.amount};
   if (reqbody.unique) {updates.unique = reqbody.unique};
   if (reqbody.categories) { updates.categories = reqbody.categories};

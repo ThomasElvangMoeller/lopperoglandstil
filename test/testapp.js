@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const hbs = require('hbs');
 const session = require('express-session');
 const config = require('../config');
+const multer = require('multer');
 
 const app = express();
 
@@ -28,6 +29,13 @@ mongoose.connect(config.testMongoDB, {useNewUrlParser: true});
 // ROUTES FOR THE APP
 const adminRouter = require('../routes/admin');
 const produktRouter = require('../routes/api/produkter');
+const storage = multer.diskStorage({
+    destination: '/test/public/uploads',
+    filename: function (request, file, callback) {
+        callback(null, mongoose.Types.ObjectId() + '.jpg')
+    }
+})
+produktRouter.upload = multer({storage: storage});
 app.use('/api/produkter', produktRouter);
 app.use('/admin', adminRouter);
 
