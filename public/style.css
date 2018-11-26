@@ -120,12 +120,9 @@ nav .navLinks a:hover {
 
 /* =================== KATALOG SECTION ================== */
 
-
-
 .container {
   display: table;
   width: 100%;
-
 }
 .product-menu {
   display: table-cell;
@@ -249,20 +246,19 @@ nav .navLinks a:hover {
 
 /* =================== PRODUCT SECTION ================== */
 
-.main-product-picture {
-  float: left;
-  width: 50%;
-  background-color: #4CAF50;
-  min-width: 400px;
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  width: 100%;
+  grid-gap: 10px;
 }
 
-.main-product-info {
-  float: left;
-  padding-left: 3%;
-  width: 47%;
-  min-width: 400px;
-  height: 500px;
-  background: brown;
+.product-container .main-product-picture {
+  grid-column: 1/2;
+}
+
+.product-container .main-product-info {
+  grid-column: 2/3;
 }
 
 .main-product-bigPicture {
@@ -273,4 +269,35 @@ nav .navLinks a:hover {
 
 .main-product-description {
   width: 70%;
+}
+
+.main-product-price {
+  font-size: larger;
+  font-weight: bold;
+  margin: 0px;
+}
+.main-product-status {
+  font-size: 13px;
+  color: gray;
+
+}
+@media only screen and (max-width: 800px) {
+  .product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    width: 100%;
+    grid-gap: 10px;
+  }
+  .product-container .main-product-picture {
+    grid-column: 2/3;
+    min-width: 400px;
+  }
+
+  .product-container .main-product-info {
+    grid-column: 2/3;
+    min-width: 400px;
+  }
+  .main-product-description {
+    width: 100%;
+  }
 }
