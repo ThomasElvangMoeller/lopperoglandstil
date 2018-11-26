@@ -42,7 +42,12 @@ exports.updateProduct = (id, reqbody) => {
   Product.updateOne({_id: id}, updates,).exec();
 }
 
-
+exports.deleteProduct = async (id) => {
+  let product = await Product.findOneAndDelete({_id:id});
+  for (let pic of product.pictures) {
+    console.log(`${pic}.jpg`);
+  }
+}
 
 // Add an array of pictures to a product, and saves it to the database
 exports.addPictures = async (product_id, picture_ids) => {
