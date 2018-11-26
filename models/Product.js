@@ -13,6 +13,7 @@ let product = new Schema({
     reservedAmount: {type: Number, default: 0},  
     // The _id of the pictures in the picture collection
     pictures: [String],
+    unique: {type: Boolean, default: false},
     // The categories used for navigation in the catalog
     categories: [String],
     price: {type: Number},

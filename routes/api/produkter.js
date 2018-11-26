@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const mongooseId = require('mongoose').Types.ObjectId;
 
+
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: 'public/uploads',
@@ -56,26 +57,49 @@ router.post('/', async function (req, res) {
 router.post('/:id/uploadbilleder', upload.array('product'), async (req, res) => {
     if(!req.files){
         console.log('no file found');
-        return res.send({success:false})
+        return res.send({
+            success:false,
+            error: 'No file found'
+        })
     }
     else{
-        console.log('file uploaded');
-        let ids = [];
-        req.files.forEach(pic => {
-            ids.push(pic.filename.substring(0, 24));
-        });
+        try {
+            let ids = [];
+            req.files.forEach(pic => {
+                ids.push(pic.filename.substring(0, 24));
+            });
 
-        await controller.addPictures(req.params.id, ids);
-        return res.send({
-            success:true,
-            _ids: ids 
-        })
+            await controller.addPictures(req.params.id, ids);
+            console.log('file uploaded');
+            return res.send({
+                success:true,
+                _ids: ids 
+            })
+
+        } catch (error) {
+            return res.send({
+                success:false,
+                error
+            })
+        }
+        
     }
 });
 
+// Update a product. Updates the fields that is passed in the body.
 router.put('/:id', async (req, res) => {
     try {
         await controller.updateProduct(req.params.id, req.body);
+        res.json({success: true});
+    } catch (error) {
+        res.json({success: false, error: error.message});
+    }
+});
+
+// Delete a product, also takes care of deleting all the pictures that are of the product
+router.delete('/:id', async (req, res) => {
+    try {
+        await controller.deleteProduct(req.params.id);
         res.json({success: true});
     } catch (error) {
         res.json({success: false, error: error.message});

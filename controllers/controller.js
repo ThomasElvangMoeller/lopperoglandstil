@@ -4,11 +4,12 @@ const Product = require("../models/Product");
 const mongooseId = require('mongoose').Types.ObjectId;
 
 // Create a product and save it to the database
-exports.createProduct = (name, desc, amount, categories, price) => {
+exports.createProduct = (name, desc, amount, categories, price, unique = false) => {
   let product = new Product({
     name: name,
     description: desc,
     amount: amount, 
+    unique: unique,
     pictures: [],
     categories: categories,
     price: price,
@@ -32,6 +33,7 @@ exports.updateProduct = (id, reqbody) => {
   if (reqbody.name) { updates.name = reqbody.name};
   if (reqbody.desc) { updates.desc = reqbody.desc};
   if (reqbody.amount) { updates.amount = reqbody.amount};
+  if (reqbody.unique) {updates.unique = reqbody.unique};
   if (reqbody.categories) { updates.categories = reqbody.categories};
   if (reqbody.price) { updates.price = reqbody.price};
   if (reqbody.discount) { updates.discount = reqbody.discount};
@@ -39,6 +41,8 @@ exports.updateProduct = (id, reqbody) => {
 
   Product.updateOne({_id: id}, updates,).exec();
 }
+
+
 
 // Add an array of pictures to a product, and saves it to the database
 exports.addPictures = async (product_id, picture_ids) => {
