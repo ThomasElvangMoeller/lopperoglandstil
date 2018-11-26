@@ -94,7 +94,7 @@ nav .navLinks a:hover {
 #content #subtitle{
   grid-column: start / end;
   font-size: 1.3em;
-  color: rgb(27, 27, 27, 0.9);
+  color: rgba(27, 27, 27, 0.9);
 }
 
 #content .wide{ grid-column: start / end; }
@@ -132,9 +132,10 @@ nav .navLinks a:hover {
 }
 .product-menu {
   display: table-cell;
-  width: 20%;
+  width: 15%;
   height: 500px;
   background-color: red;
+  overflow: hidden;
 }
 
 .products {
@@ -147,15 +148,14 @@ nav .navLinks a:hover {
 .menu-content {
   list-style-type: none;
   margin: 0;
-  padding: 10px;
+  padding: 20px 10px 10px 10px;
   height: 100%; /* Full height */
   position: fixed; /* Make it stick, even on scroll */
   overflow: auto; /* Enable scrolling if the sidenav has too much content */
 }
 
 .menu-content li a {
-  display: block;
-  width: 150px;
+  display: flex;
   background-color: #dddddd;
   font-size: larger;
   padding-left: 20px;
@@ -174,6 +174,7 @@ nav .navLinks a:hover {
 .products-content {
   float: left;
   /*background-color: rgba(0,0,0,0.05);*/
+  min-width: 300px;
   width: 25%;
   margin: 10px;
   border: 1px #dddddd solid;
@@ -203,6 +204,7 @@ nav .navLinks a:hover {
   height: 20%;
   text-align: left;
   padding-left: 3%;
+  overflow: hidden;
 }
 
 .product-name {
@@ -230,13 +232,15 @@ nav .navLinks a:hover {
 .pruducts-reservation {
   display: table-cell;
   width: 20%;
+}
 
+.product-price {
 }
 
 .reservation {
   padding: 3px 15px 3px 15px;
-  background: linear-gradient(transparent 35%, black), green;
-  color: white;
+  background: linear-gradient(transparent 35%, #B3A38F), #eedfcc;
+  color: black;
   text-align: center;
   text-decoration: none;
   border-radius: 7px;
@@ -244,4 +248,12 @@ nav .navLinks a:hover {
 
 .reservation:hover, .reservation:active {
   background: linear-gradient(transparent 35%, #424242), green;
+}
+
+/* =================== PRODUCT SECTION ================== */
+
+.main-product-picture {
+  width: 50%;
+  height: 70%;
+  background-color: #4CAF50;
 }
