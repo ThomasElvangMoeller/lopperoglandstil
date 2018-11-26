@@ -4,6 +4,19 @@ onload = () => {
     const button = document.querySelector('#button');
     const error = document.querySelector('#error');
 
+
+    password.addEventListener("keypress", function (e) {
+        if(e.which == 13){
+            button.click();
+        }
+    })
+
+    name.addEventListener("keypress", function (e) {
+        if(e.which == 13){
+            button.click();
+        }
+    })
+
     button.onclick = async () => {
         const data = {name: name.value, password: password.value};
         const result = await fetch("/admin", {
