@@ -72,9 +72,6 @@ nav .navLinks a:hover {
 /* =================== INDEX SECTION ================== */
 
 #content {
-  position: absolute;
-  top: 80%;
-  left: 0px;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 5px [start] 1fr 1fr 1fr [end] 5px 1fr;
@@ -253,7 +250,27 @@ nav .navLinks a:hover {
 /* =================== PRODUCT SECTION ================== */
 
 .main-product-picture {
+  float: left;
   width: 50%;
-  height: 70%;
   background-color: #4CAF50;
+  min-width: 400px;
+}
+
+.main-product-info {
+  float: left;
+  padding-left: 3%;
+  width: 47%;
+  min-width: 400px;
+  height: 500px;
+  background: brown;
+}
+
+.main-product-bigPicture {
+  padding-left: 5%;
+  padding-top: 15px;
+  width: 90%;
+}
+
+.main-product-description {
+  width: 70%;
 }
