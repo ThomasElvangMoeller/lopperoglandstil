@@ -173,6 +173,79 @@ describe('Products', () => {
         });
     });
 
+    describe('Picture update and delete', () => {
+
+        it('should create a product', (done) =>{
+            chai.request(app)
+                .post('/api/produkter')
+                .set('content-type', 'application/json')
+                .send({name:'unittest name', desc:'unittest description', unique:false, amount:10, categories:['unittest category 1', 'unittest category 2'], price:100})
+                .end((err, res)=>{
+                    res.should.have.status(200);
+                    res.body.should.be.an('object');
+                    res.body.success.should.eql(true);
+                    done();
+                });
+        });
+
+        it('should get the id of the first product', (done)=>{
+            chai.request(app)
+                .get('/api/produkter')
+                .end((err, res) =>{
+                    firstProductId = mongoose.Types.ObjectId(res.body[0]._id);
+                    done();
+                });
+        });
+
+        it('should upload a picture to the first product',  (done) => {
+            chai.request(app)
+                .post('/api/produkter/'+firstProductId+'/uploadbilleder')
+                .attach('product', './test/test.jpg', 'test.jpg')
+                .end((err, res) =>{
+                    res.should.have.status(200);
+                    res.body.should.be.an('object');
+                    res.body.success.should.eql(true);
+                    res.body._ids.length.should.eql(1);
+                    firstPictureId = res.body._ids[0];
+                    done();
+                });
+        });
+
+        it('should get the path to the images (1) of the first product', (done) =>{
+            chai.request(app)
+                .get('/api/produkter/'+firstProductId+'/billeder')
+                .end((err, res) =>{
+                    res.body.should.be.an('array');
+                    res.body.length.should.eql(1);
+                    res.body[0].should.contain(firstPictureId);
+                    done();
+                });
+        });
+
+        it('should delete the picture from the first product', (done) =>{
+            chai.request(app)
+                .delete('/api/produkter/'+firstProductId+'/sletBilleder')
+                .send({ pictures: [firstPictureId] })
+                .end((err, res) =>{
+                    res.should.have.status(200);
+                    res.body.success.should.be.eql(true);
+                    done();
+                })
+        });
+
+        it('should get a product with no pictures', (done) =>{
+            chai.request(app)
+                .get('/api/produkter')
+                .end((err, res)=>{
+                    res.should.have.status(200);
+                    res.body[0].pictures.length.should.be.eql(0);
+                    done();
+                })
+        })
+
+
+    })
+
 
 });
 
