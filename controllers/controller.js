@@ -2,6 +2,7 @@
 
 const Product = require("../models/Product");
 const mongooseId = require('mongoose').Types.ObjectId;
+const fs = require('fs');
 
 // Create a product and save it to the database
 exports.createProduct = (name, desc, amount, categories, price, unique = false) => {
@@ -43,10 +44,20 @@ exports.updateProduct = (id, reqbody) => {
 }
 
 exports.deleteProduct = async (id) => {
-  let product = await Product.findOneAndDelete({_id:id});
+  let product = await Product.findOne({_id:id});
   for (let pic of product.pictures) {
-    console.log(`${pic}.jpg`);
+    fs.exists(`./public/uploads/${pic}.jpg`, function(exists) {
+      if(exists) {
+        fs.unlink(`./public/uploads/${pic}.jpg`, (err) => {
+          if (err) throw err;
+        });
+      } else {
+        console.log('File not found, so not deleting.');
+      }
+    });
   }
+  Product.deleteOne({_id:id}).exec();
+  
 }
 
 // Add an array of pictures to a product, and saves it to the database
