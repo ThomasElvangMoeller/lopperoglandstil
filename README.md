@@ -1,28 +1,45 @@
 # Website, LopperogLandstil
 
-**Vores kodestil:**
+###Vores kodestil
 
 1. Alt skal skrives på engelsk
 2. Koden skal opdeles i funktionalitet, hold relateret funktioner tæt
 3. END points på websiden er på dansk
 
-**End points**
+###End points
+*beskrivelse er over end point*
 ```
-http://lopperoglandstil.dk/
+GET: http://lopperoglandstil.dk/
 
-http://lopperoglandstil.dk/admin
-http://lopperoglandstil.dk/session
-
-http://lopperoglandstil.dk/api/produkter
-http://lopperoglandstil.dk/api/produkter/:id
+GET: http://lopperoglandstil.dk/admin
+GET: http://lopperoglandstil.dk/session
+```
+Returnerer Produkterne i databasen, :id er ObjectId på et specifikt produkt
+```
+GET: http://lopperoglandstil.dk/api/produkter
+GET: http://lopperoglandstil.dk/api/produkter/:id
+```
+Returnerer et array med den fulde sti til billedet
+```
+GET: http://lopperoglandstil.dk/api/produkter/:id/billeder
 ```
 
-**Medlemmer**
+- req.body Parametere (name, desc, amount, categories, price)
+```
+POST: http://lopperoglandstil.dk/api/produkter
+```
+- req.files = array af billeder
+```
+POST: http://lopperoglandstil.dk/api/produkter/:id/uploadbilleder
+```
+
+
+###Medlemmer
 - Frank
 - Frederik
 - Ole
-- Simon
-- Simon
+- Simon K
+- Simon G
 - Thomas
 
 
