@@ -1,22 +1,39 @@
-/* =================== LAYOUT SECTION ================== */
 
+html, body {
+  height: 100%;
+  margin: 0px;
+}
 body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(210,180,140); 
+  background-color: #fffafa;
 }
 
-#headerimg {
+/* =================== HEADER SECTION ================== */
+
+.headerimage {
+  height: 80%;
+  width: 100%;
+  background: linear-gradient(transparent 90%, #fffafa), url("imgs/odderAvis1.jpg") no-repeat;
+  background-size: cover;
+  background-position: 200px, 0px;
+}
+.headerimage-katalog {
+  height: 30%;
+  width: 100%;
+  background: linear-gradient(transparent 80%,#fffafa), url("imgs/odderAvis8.jpg") no-repeat;
+  background-size: cover;
+  background-position: 200px, 0px;
+}
+
+.navbar {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: -1;
-  height: 80%;
+  z-index: +1;
   width: 100%;
-  object-fit: cover;
 }
-
 nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -24,27 +41,21 @@ nav {
   align-items: center;
   text-align: center;
   margin: 40px 10%;
-  
-} 
+}
 
-
-.logo {
-  background-image: url("/imgs/logo.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 180px;
+nav .logo {
+  height: 150px;
   margin: 5px;
 }
 
-.navLinks {
+nav .navLinks {
   padding: 10px;
   background-color: hsla(28, 100%, 86%, 0.70);
   max-height: 25px;
   min-height: 25px;
 }
 
-.navLinks a {
+nav .navLinks a {
   font-size: 1.2em;
   text-transform: uppercase;
   text-decoration: none;
@@ -52,21 +63,13 @@ nav {
   width: 100%;
 }
 
-.navLinks a:hover {
+nav .navLinks a:hover {
   border-left: 2px solid whitesmoke;
   border-right: 2px solid whitesmoke;
   padding: 0.5em;
 }
 
-
-#gradientFade {
-  background: linear-gradient(rgb(210,180,140, 0), rgb(210,180,140));
-  position: absolute;
-  top: 73%;
-  left: 0px;
-  width: 100%;
-  height: 7%;
-}
+/* =================== INDEX SECTION ================== */
 
 #content {
   position: absolute;
@@ -91,7 +94,7 @@ nav {
 #content #subtitle{
   grid-column: start / end;
   font-size: 1.3em;
-  color: rgb(27, 27, 27, 0.9);
+  color: rgba(27, 27, 27, 0.9);
 }
 
 #content .wide{ grid-column: start / end; }
@@ -118,4 +121,139 @@ nav {
   box-shadow: 0px 0px 8px #fff;
 }
 
-/* =================== LAYOUT SECTION ================== */
+/* =================== KATALOG SECTION ================== */
+
+
+
+.container {
+  display: table;
+  width: 100%;
+
+}
+.product-menu {
+  display: table-cell;
+  width: 15%;
+  height: 500px;
+  background-color: red;
+  overflow: hidden;
+}
+
+.products {
+  height: 200px;
+  display: table-cell;
+  width: 80%;
+  background-color: #fffafa;
+}
+
+.menu-content {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 10px 10px 10px;
+  height: 100%; /* Full height */
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+.menu-content li a {
+  display: flex;
+  background-color: #dddddd;
+  font-size: larger;
+  padding-left: 20px;
+}
+
+.menu-content li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.menu-content li a:active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.products-content {
+  float: left;
+  /*background-color: rgba(0,0,0,0.05);*/
+  min-width: 300px;
+  width: 25%;
+  margin: 10px;
+  border: 1px #dddddd solid;
+}
+
+.product-picturebox{
+  width: 95%;
+  margin: 2.5%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-picture {
+  height: 180px;
+  opacity: 1;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0px;
+  /*left: 16px;*/
+  font-size: 16px;
+  z-index: +1;
+  background: rgba(255,255,255,0.5);
+  width: 100%;
+  height: 20%;
+  text-align: left;
+  padding-left: 3%;
+  overflow: hidden;
+}
+
+.product-name {
+  margin-top: 5px;
+  color: black;
+}
+
+.products-name {
+
+}
+
+.products-price-reservation {
+  display: table;
+  width: 90%;
+  margin-top: 3%;
+  padding: 5px 5% 5px 5%;
+  border-top: 1px #dddddd solid;
+}
+
+.products-price {
+  display: table-cell;
+  width: 80%;
+}
+
+.pruducts-reservation {
+  display: table-cell;
+  width: 20%;
+}
+
+.product-price {
+}
+
+.reservation {
+  padding: 3px 15px 3px 15px;
+  background: linear-gradient(transparent 35%, #B3A38F), #eedfcc;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.reservation:hover, .reservation:active {
+  background: linear-gradient(transparent 35%, #424242), green;
+}
+
+/* =================== PRODUCT SECTION ================== */
+
+.main-product-picture {
+  width: 50%;
+  height: 70%;
+  background-color: #4CAF50;
+}
