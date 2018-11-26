@@ -27,6 +27,7 @@ exports.getProducts = () => {
   return Product.find().exec();
 };
 
+// Updates a product, only updates the fields that is included in the request body
 exports.updateProduct = (id, reqbody) => {
   let updates = {};
   updates.updated = Date.now();
@@ -43,6 +44,7 @@ exports.updateProduct = (id, reqbody) => {
   Product.updateOne({_id: id}, updates,).exec();
 }
 
+// Delete a specific product and the pictures of the product
 exports.deleteProduct = async (id) => {
   let product = await Product.findOne({_id:id});
   for (let pic of product.pictures) {
@@ -57,14 +59,32 @@ exports.deleteProduct = async (id) => {
     });
   }
   Product.deleteOne({_id:id}).exec();
+}
+
+exports.deletePicturesFromProduct = async (product_id, picture_ids) => {
   
+  let product = await Product.findOneAndUpdate({_id: mongooseId(product_id)}, {$pullAll: {pictures: picture_ids}, updated: Date.now()} ).exec();
+
+  if (product) {
+    for (let pic of picture_ids) {
+      fs.exists(`./public/uploads/${pic}.jpg`, function(exists) {
+        if(exists) {
+          fs.unlink(`./public/uploads/${pic}.jpg`, (err) => {
+            if (err) throw err;
+          });
+        } else {
+          console.log('File not found, so not deleting.');
+        }
+      });
+    }
+  }
+
 }
 
 // Add an array of pictures to a product, and saves it to the database
 exports.addPictures = async (product_id, picture_ids) => {
   try {
     await Product.findOneAndUpdate({_id: mongooseId(product_id)}, {$push: {pictures: picture_ids}, updated: Date.now()} ).exec();
-    console.log("hej");
   } catch (error) {
     console.log(error)
   }  

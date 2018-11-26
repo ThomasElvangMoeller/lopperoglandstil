@@ -106,4 +106,14 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+// Delete a specific pictures on a specific product
+router.delete('/:id/sletBilleder', async (req, res) => {
+    try {
+        await controller.deletePicturesFromProduct(req.params.id, req.body.pictures);
+        res.json({success: true});
+    } catch (error) {
+        res.json({success: false, error: error.message});
+    }
+});
+
 module.exports = router;
