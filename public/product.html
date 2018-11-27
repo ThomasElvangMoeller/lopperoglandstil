@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <script src="galleri.js"></script>
 </head>
 <body>
 
@@ -34,7 +35,13 @@
 
 <div class="product-container">
     <div class="main-product-picture">
-        <img class="main-product-bigPicture" src="imgs/odderAvis4.jpg">
+        <img id="main-product-bigPicture" src="imgs/odderAvis4.jpg">
+        <br>
+        <div class="main-product-mini-container">
+            <img src="imgs/odderAvis4.jpg" class="main-product-mini" onclick="galleriFunction(this);">
+            <img src="imgs/odderAvis7.jpg" class="main-product-mini" onclick="galleriFunction(this);">
+            <img src="imgs/odderAvis8.jpg" class="main-product-mini" onclick="galleriFunction(this);">
+        </div>
     </div>
     <div class="main-product-info">
         <div class="main-product-description">
