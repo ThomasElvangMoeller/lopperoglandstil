@@ -9,7 +9,7 @@ exports.createProduct = (name, desc, amount, categories, price, unique = false) 
   let product = new Product({
     name: name,
     description: desc,
-    amount: amount, 
+    amount: amount,
     unique: unique,
     pictures: [],
     categories: categories,
@@ -62,7 +62,7 @@ exports.deleteProduct = async (id) => {
 }
 
 exports.deletePicturesFromProduct = async (product_id, picture_ids) => {
-  
+
   let product = await Product.findOneAndUpdate({_id: mongooseId(product_id)}, {$pullAll: {pictures: picture_ids}, updated: Date.now()} ).exec();
 
   if (product) {
@@ -87,5 +87,5 @@ exports.addPictures = async (product_id, picture_ids) => {
     await Product.findOneAndUpdate({_id: mongooseId(product_id)}, {$push: {pictures: picture_ids}, updated: Date.now()} ).exec();
   } catch (error) {
     console.log(error)
-  }  
+  }
 }
