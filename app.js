@@ -10,6 +10,7 @@ const config = require('./config');
 const app = express();
 
 app.use(express.static('public', {extensions: ['html']}));  //Serve static files from public folder
+app.use(express.static('public/pages', {extensions: ['html']}));
 app.use(express.json());            //Parse incomming json requests to js objects
 app.use(morgan('tiny'));            //Logs every request
 app.set('view engine', 'hbs');      //Setup the app view engine with hbs
