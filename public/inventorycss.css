@@ -13,7 +13,11 @@
     text-align: right;
 }
 
-#inventory_table tr:nth-child(even){background-color: #f2f2f2;}
+#inventory_table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+
 
 div.navbar {
     padding: 1ch;
@@ -37,8 +41,14 @@ tr.inventory_tablerow_header {
     height: 4em;
 }
 
-th.inventory_header {
+#inventory_table_reservedamount {
+    white-space: nowrap;
+}
 
+.inventory_product_outer {
+    position: fixed;
+    width: 25%;
+    border-collapse: collapse;
 }
 
 span.headertext {
@@ -52,28 +62,32 @@ div.inventory_middle {
     border-collapse: collapse;
 }
 
+
 div.inventory_main {
     border: 2px #19530b solid;
+    border-collapse: collapse;
     width: 100%;
+    max-height: 100%;
     float: left;
 }
 
 div.inventory_specs {
     border: 2px #19530b solid;
     width: 100%;
+    max-height: 100%;
     float: right;
     background-color: #f2f2f2;
 }
 
 .inventory_product_image {
+    border-bottom: #555555 2px solid;
     max-width: 100%;
-    border: #555555 2px solid;
 }
 .no_image_found {
     padding: 2ch;
     text-align: center;
     font-size: xx-large;
     border: 2px #555555 solid;
-    border-radius: 2%;
+    /*border-radius: 2%;*/
     height: 3em;
 }

@@ -1,7 +1,7 @@
 let currentRow = 0;
 
 onload = async () =>{
-    const [tabletemplate, producttemplate, productsJSON] = await Promise.all([fetch('/inventorytable.hbs'),fetch('/inventoryproductspecs.hbs'), fetch('/api/produkter')]);
+    const [tabletemplate, producttemplate, productsJSON] = await Promise.all([fetch('/templates/inventorytable.hbs'), fetch('/templates/inventoryproductspecs.hbs'), fetch('/api/produkter')]);
     const [tabletemplateText, producttemplateText, product] = await Promise.all([tabletemplate.text(), producttemplate.text(), productsJSON.json()]);
     const compiledTableTemplate = Handlebars.compile(tabletemplateText);
     const compiledProductTemplate = Handlebars.compile(producttemplateText);
@@ -26,6 +26,7 @@ onload = async () =>{
         }
         console.log(currentRow);
     }
+
 
 
 };
