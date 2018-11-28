@@ -13,7 +13,7 @@ app.use(express.static('public', {extensions: ['html']}));  //Serve static files
 app.use(express.json());            //Parse incomming json requests to js objects
 app.use(morgan('tiny'));            //Logs every request
 app.set('view engine', 'hbs');      //Setup the app view engine with hbs
-app.set('views', 'templates');      //Set the folder where we store the views to render
+app.set('views', './public/templates');      //Set the folder where we store the views to render
 app.use(session({
     secret: 'hemmelig', //note: weak encrypt key 
     saveUninitialized: true, 

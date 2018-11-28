@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Tilføj Produkt</title>
     <link rel="stylesheet" type="text/css" href="/createStyle.css   ">
+    <script src="createProduct.js"></script>
 </head>
 <body>
 <nav class="container">
@@ -15,13 +16,13 @@
     <div id="nameHolder"><input id="name" placeholder="Indtast Navn"></div>
     <div id="descriptionHolder"> <textarea rows="4" cols="25" id="description" placeholder="evt. Beskrivelse"></textarea> </div>
     <div id="amountHolder"><input id="amount" type="number" placeholder="Antal"></div>
-    <div id="picHolder"><form action="/api/produkter/ PRODUKT_ID /uploadbilleder" enctype="multipart/form-data" method="POST">
-        <input type="file" name="product" id="product" required />
-        <input type="submit" value="Upload" />
-    </form></div>
-    <div id="categoryHolder"><input id="category" type="text" placeholder="Kategori"></div>
+    <div id="picHolder">
+        <input id="chosenPicture" type="file" name="product" required />
+    </div>
+    <div id="categoryHolder"><input id="category" type="text" placeholder="Kategorier: adskil komma"></div>
     <div id="priceHolder"><input id="price" type="text" placeholder="Pris"></div>
     <div id="submitHolder"><input id="submit" type="submit" value="Opret"></div>
+    <div id="uniqueHolder">Unik Vare<input id="unique" type="checkbox" placeholder ="Unik Vare">  </div>
 </div>
 
 
