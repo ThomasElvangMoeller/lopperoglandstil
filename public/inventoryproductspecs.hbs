@@ -1,0 +1,24 @@
+<div class="inventory_product_outer">
+    {{#if product.pictures}}
+        <img src="/uploads/{{product.pictures.[0]}}.jpg" id="{{product._id}}" class="inventory_product_image">
+    {{else}}
+        <div class="no_image_found">
+            Intet Billede Fundet
+        </div>
+    {{/if}}
+    <span class="inventory_product_name"><b>Produkt navn:</b> {{product.name}}</span> <br>
+    <span class="inventory_product_description"><b>Produkt beskrivelse:</b> {{product.description}}</span> <br>
+    <span class="inventory_product_updated"><b>Sidst opdateret:</b> {{product.updated}}</span> <br>
+    <span class="inventory_product_created"><b>Oprettet:</b> {{product.created}}</span> <br>
+    <span class="inventory_product_amount"><b>Antal på lager:</b> {{product.amount}}</span> <br>
+    <span class="inventory_product_reservedamount"><b>Antal produkter reserveret:</b> {{product.reservedAmount}}</span> <br>
+    <span class="inventory_product_reserved">{{product.reserved}}</span> <br>
+    <div class="inventory_product_categories">
+    {{#each product.categories}}
+        {{this}},
+    {{/each}}
+    </div>
+    <span class="inventory_product_price">{{product.price}} <br></span>
+    <span class="inventory_product_discount">{{product.discount}}</span> <br>
+
+</div>

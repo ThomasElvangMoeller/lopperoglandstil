@@ -1,0 +1,22 @@
+<table class="inventory_table" id="inventory_table">
+    <tr class="inventory_tablerow_header">
+        <th class="inventory_header"><span class="headertext" id="product">Produkt</span></th>
+        <th class="inventory_header"><span class="headertext" id="amount">Antal</span> </th>
+        <th class="inventory_header"><span class="headertext" id="price">Pris</span> </th>
+        <th class="inventory_header"><span class="headertext" id="categories">Kategorier</span> </th>
+        <th class="inventory_header"><span class="headertext" id="reservedamount">Reserveret Antal</span> </th>
+    </tr>
+    {{#each product}}
+        <tr class="inventory_tablerow_data" id="inventory_tablerow_data" >
+            <td class="inventory_tabledata"> {{this.name}} </td>
+            <td class="inventory_tabledata_num"> {{this.amount}} </td>
+            <td class="inventory_tabledata_num"> {{this.price}} </td>
+            <td class="inventory_tabledata"><ul class="inventory_categories">
+                {{#each this.categories}}
+                    <li class="inventory_categories_elements">{{this}}</li>
+                {{/each}}
+            </ul></td>
+            <td class="inventory_tabledata_num"> {{this.reservedAmount}} </td>
+        </tr>
+    {{/each}}
+</table>

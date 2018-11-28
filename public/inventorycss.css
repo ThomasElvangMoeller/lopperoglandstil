@@ -1,0 +1,79 @@
+.inventory_tabledata {
+    border: 1px rgba(130,130,131,0.62) solid;
+    border-collapse: collapse;
+    padding: 1ch;
+    cursor: pointer;
+}
+
+.inventory_tabledata_num {
+    border: 1px rgba(130,130,131,0.62) solid;
+    border-collapse: collapse;
+    padding: 1ch;
+    cursor: pointer;
+    text-align: right;
+}
+
+#inventory_table tr:nth-child(even){background-color: #f2f2f2;}
+
+div.navbar {
+    padding: 1ch;
+}
+
+#link_to_front {
+    background-color: #4CAF50;
+    height: content-box;
+    width: content-box;
+    font-size: large;
+    border-radius: 7%;
+}
+
+table.inventory_table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr.inventory_tablerow_header {
+    background-color: #4CAF50;
+    height: 4em;
+}
+
+th.inventory_header {
+
+}
+
+span.headertext {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: x-large;
+}
+
+div.inventory_middle {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    border-collapse: collapse;
+}
+
+div.inventory_main {
+    border: 2px #19530b solid;
+    width: 100%;
+    float: left;
+}
+
+div.inventory_specs {
+    border: 2px #19530b solid;
+    width: 100%;
+    float: right;
+    background-color: #f2f2f2;
+}
+
+.inventory_product_image {
+    max-width: 100%;
+    border: #555555 2px solid;
+}
+.no_image_found {
+    padding: 2ch;
+    text-align: center;
+    font-size: xx-large;
+    border: 2px #555555 solid;
+    border-radius: 2%;
+    height: 3em;
+}
