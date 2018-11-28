@@ -15,11 +15,20 @@
     <div id="nameHolder"><input id="name" placeholder="Indtast Navn"></div>
     <div id="descriptionHolder"> <textarea rows="4" cols="25" id="description" placeholder="evt. Beskrivelse"></textarea> </div>
     <div id="amountHolder"><input id="amount" type="number" placeholder="Antal"></div>
-    <div id="picHolder"><input id="picture" type="file"></div>
+    <div id="picHolder"><form action="/api/produkter/ PRODUKT_ID /uploadbilleder" enctype="multipart/form-data" method="POST">
+        <input type="file" name="product" id="product" required />
+        <input type="submit" value="Upload" />
+    </form></div>
     <div id="categoryHolder"><input id="category" type="text" placeholder="Kategori"></div>
     <div id="priceHolder"><input id="price" type="text" placeholder="Pris"></div>
-    <div id="submitHolder"><input id="submit" type="submit" placeholder="Opret"></div>
+    <div id="submitHolder"><input id="submit" type="submit" value="Opret"></div>
 </div>
+
+
+
+
+
+
 
 <a href="/admin/logout"> log ud</a>
 </body>
