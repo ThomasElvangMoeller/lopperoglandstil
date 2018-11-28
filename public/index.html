@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
   <title>Lopper & Landstil</title>
+  <link rel="stylesheet" type="text/css" href="css/header.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/footer.css">
   <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
@@ -14,24 +16,34 @@
 <!--header-->
   <div class="headerimage"></div>
 <div class="navbar">
-  <nav>
+  <nav id="topnav">
     <div class="navLinks">
-    <a href="index.html">Forside</a>
+      <a href="index.html">Forside</a>
     </div>
     <div class="navLinks">
-    <a href="#">Hvem er jeg</a>
+      <a href="#">Hvem er jeg</a>
     </div>
     <div class="logo">
-        <a href="index.html"><img class="logo" src="/imgs/logo.png"> </a>
+      <a href="index.html"><img class="logo" src="/imgs/logo.png"> </a>
     </div>
     <div class="navLinks">
-    <a href="#">Kontakt</a>
+      <a href="#">Kontakt</a>
     </div>
     <div class="navLinks">
-    <a href="katalog.html">Katalog</a>
+      <a href="katalog.html">Katalog</a>
     </div>
   </nav>
 </div>
+
+<nav id="fixedMenu">
+  <div>   
+    <img class="menuLogo" src="/imgs/logo.png">    
+    <a class="menuItem" href="index.html">Forside</a>
+    <a class="menuItem" href="#">Hvem er jeg</a>
+    <a class="menuItem" href="#">Kontakt</a>
+    <a class="menuItem" href="katalog.html">Katalog</a>
+  </div>
+</nav>
 
 <!--content-->
   <div id="content">
