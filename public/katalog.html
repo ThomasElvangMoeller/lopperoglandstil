@@ -5,6 +5,8 @@
     <title>Title</title>
     <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
+    <script src="scriptKatalog.js"></script>
 </head>
 <body>
 
@@ -34,12 +36,15 @@
 <!--content-->
 <div class="container">
     <div class="product-menu">
-        <ul class="menu-content">
-            <li><a>Home</a></li>
-            <li><a>Test</a></li>
+        <h2>Kategorier</h2>
+        <ul id="menu-content">
+            <li><a><p>Home</p></a></li>
+            <li><a><p>Varer</p></a></li>
+            <li><a><p>Kategori</p></a></li>
+            <li><a><p>Tilbage</p></a></li>
         </ul>
     </div>
-    <div class="products">
+    <div id="products">
         <a href="product.html">
             <div class="products-content">
                 <a href="product.html">
@@ -50,7 +55,7 @@
                 </a>
                 <div class="products-price-reservation">
                     <div class="products-price">
-                        <p class="product-price">250 kr</p>
+                        <p>250 kr</p>
                     </div>
                     <div class="products-reservation">
                         <a class="reservation" href="#">Reservér</a>
@@ -58,40 +63,6 @@
                 </div>
             </div>
         </a>
-        <div class="products-content">
-            <a href="#">
-                <div class="product-picturebox">
-                    <div class="bottomleft"><p class="product-name">Bottom Left </p></div>
-                    <img class="product-picture" src="imgs/odderAvis9.jpg">
-
-                </div>
-            </a>
-            <div class="products-price-reservation">
-                <div class="products-price">
-                    <p>Price</p>
-                </div>
-                <div class="products-reservation">
-                    <a class="reservation" href="#">Reservér</a>
-                </div>
-            </div>
-        </div>
-        <div class="products-content">
-            <a href="#">
-                <div class="product-picturebox">
-                    <div class="bottomleft"><p class="product-name">Bottom Left</p></div>
-                    <img class="product-picture" src="imgs/odderAvis7.jpg">
-
-                </div>
-            </a>
-            <div class="products-price-reservation">
-                <div class="products-price">
-                    <p>Price</p>
-                </div>
-                <div class="products-reservation">
-                    <a class="reservation" href="#">Reservér</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 

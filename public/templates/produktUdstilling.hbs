@@ -1,38 +1,22 @@
-<div class="products-content">
-    <a href="#">                                                                    // ryk dette link ud
-        <div class="product-picturebox">
-            <div class="bottomleft"><p class="product-name">{{this.name}}</p></div>
-            <img class="product-picture" src="imgs/odderAvis7.jpg">                 // indsæt billede - this.pictures[0]
+{{#each product}}
+    <a href="product.html">
+        <div class="products-content">
+            <a href="product.html">
+                <div class="product-picturebox">
+                    <div class="bottomleft"><p class="product-name">{{this.name}}</p></div>
+                    <img class="product-picture" src="/uploads/{{this.pictures.[0]}}.jpg">
+                </div>
+            </a>
+            <div class="products-price-reservation">
+                <div class="products-price">
+                    <p>{{this.price}} kr.</p>
+                </div>
+                <div class="products-reservation">
+                    {{#if this.unique}}
+                        <a class="reservation" href="#">Reservér</a>
+                    {{/if}}
+                </div>
+            </div>
         </div>
     </a>
-    <div class="products-price-reservation">
-        <div class="products-price">
-            <p class="product-price">{{this.price}} kr.</p>
-        </div>
-        <div class="products-reservation">
-            {{#if this.unique}}
-            <a class="reservation" href="#">Reservér</a>
-            {{/if}}
-        </div>
-    </div>
-</div>
-
-
-{
-"amount": 3,
-"reservedAmount": 0,
-"pictures": [],
-"unique": false,
-"categories": [
-"tilbud",
-"test"
-],
-"discount": 0,
-"_id": "5bfbb856b4cdbc3ee0ee5dbb",
-"name": "TestProdukt1",
-"description": "Dette er en test produktbeskrivelse",
-"price": 200,
-"updated": "2018-11-26T09:09:42.775Z",
-"created": "2018-11-26T09:09:42.775Z",
-"__v": 0
-}
+{{/each}}
