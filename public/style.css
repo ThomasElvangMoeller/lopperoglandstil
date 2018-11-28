@@ -120,12 +120,9 @@ nav .navLinks a:hover {
 
 /* =================== KATALOG SECTION ================== */
 
-
-
 .container {
   display: table;
   width: 100%;
-
 }
 .product-menu {
   display: table-cell;
@@ -226,7 +223,7 @@ nav .navLinks a:hover {
   width: 80%;
 }
 
-.pruducts-reservation {
+.products-reservation {
   display: table-cell;
   width: 20%;
 }
@@ -249,28 +246,72 @@ nav .navLinks a:hover {
 
 /* =================== PRODUCT SECTION ================== */
 
-.main-product-picture {
-  float: left;
-  width: 50%;
-  background-color: #4CAF50;
-  min-width: 400px;
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  width: 100%;
+  grid-gap: 10px;
 }
 
-.main-product-info {
-  float: left;
-  padding-left: 3%;
-  width: 47%;
-  min-width: 400px;
-  height: 500px;
-  background: brown;
+.product-container .main-product-picture {
+  grid-column: 1/2;
+  text-align: center;
 }
 
-.main-product-bigPicture {
-  padding-left: 5%;
+.product-container .main-product-info {
+  grid-column: 2/3;
+}
+
+#main-product-bigPicture {
   padding-top: 15px;
   width: 90%;
 }
 
+.main-product-mini-container {
+  display: table;
+  margin: auto;
+  width: 70%;
+}
+
+.main-product-mini {
+  width: 15%;
+  padding: 1%;
+  opacity: 0.6;
+}
+.main-product-mini:hover {
+  opacity: 0.9;
+}
+
 .main-product-description {
   width: 70%;
+}
+
+.main-product-price {
+  font-size: larger;
+  font-weight: bold;
+  margin: 0;
+}
+.main-product-status {
+  font-size: 13px;
+  color: gray;
+}
+@media only screen and (max-width: 800px) {
+  .product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    width: 100%;
+    grid-gap: 10px;
+  }
+  .product-container .main-product-picture {
+    grid-column: 1/4;
+    min-width: 400px;
+  }
+
+  .product-container .main-product-info {
+    grid-column: 2/3;
+    min-width: 400px;
+  }
+  .main-product-description {
+    width: 100%;
+  }
 }
