@@ -1,14 +1,17 @@
 /*=================== FOOTER SECTION ================== */
 
-#footermargins {
+footer {
     display: grid;
+    background-image: linear-gradient(transparent 10%, hsla(28, 100%, 86%));
     grid-gap: 20px;
     grid-template-columns: 1fr 5px [start] 3fr [end] 5px 1fr;
     width: 100%;
-    margin-block-start: 2em;
+    margin-block-start: 5rem;
+    padding-block-end: 2rem;
 }
 
 #footerwrapper {
+    border-top: 1px solid black;
     grid-column: start / end;
     display: grid;
     grid-gap: 20px;
@@ -16,15 +19,21 @@
     width: 100%;
 }
 
-.undersider a {
+.undersider a, .åbningstider li {
     text-align: center;
     display: block;
     color: black;
     margin: 10px 0;
-    width: 100px;
     border-radius: 4px;
     padding: 3px;
     background-color: rgba(255, 136, 0, 0.3);
+}
+.undersider a{
+    width: 100px;
+}
+
+.åbningstider li {
+    width: 200px;
 }
 
 .socialmedia img {
