@@ -2,18 +2,46 @@ const controller = require("../controllers/controller");
 const express = require('express');
 const router = express.Router();
 
-// TODO
-router.get('/', function (req, res) {
-    //Login page
-
-    res.send(`Login page`);
-});
 
 // TODO
-router.get('/session', function (req, res) {
-    //if logged in/legit session: Main admin page
-    res.send(`Main admin page`);
-    //else: access denied 
-});
+router.post('/', function (req, res) {
+    const {name, password} = req.body;
 
-module.exports = router;
+    controller.getLogins(name, password)
+        .then(result => {
+            if (result.length) {
+                req.session.name = name;
+                res.send({ok: true})
+            }
+            else {
+                res.send({ok: false})
+            }
+        })
+.catch(error =>{
+    console.log(error)
+    })
+})
+
+// TODO
+    router.get('/session', function (req, res) {
+        const name = req.session.name;
+        if(name) {
+            res.render(`session`,{name});
+        }else{
+            res.render('loginFail')
+        }
+        //else: access denied
+    });
+
+
+    router.get('/logout', function (req, res) {
+        req.session.destroy(function (err) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect('/admin');
+            }
+        });
+    });
+
+    module.exports = router;
