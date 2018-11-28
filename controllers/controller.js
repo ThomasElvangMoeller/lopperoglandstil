@@ -89,3 +89,27 @@ exports.addPictures = async (product_id, picture_ids) => {
     console.log(error)
   }
 }
+
+//------------------------------------------------------------------------
+const Login = require("../models/Login");
+
+// Create a login and save it to the database
+// TODO
+exports.createLogin = (username, password) => {
+    let login = new Login({
+        username: username,
+        password: password
+    });
+    return login.save();
+};
+
+// Find and return all logins in the database
+// TODO
+exports.getLogins = (name,pass) => {
+    return Login.find({username: name, password: pass}).exec();
+};
+
+
+
+
+

@@ -7,4 +7,6 @@ onload = () => {
     const capture = document.body.querySelector("#picture");
 
 
+
+
 }
