@@ -33,6 +33,15 @@ router.post('/', function (req, res) {
         //else: access denied
     });
 
+    router.get('/createProduct', function (req, res) {
+        const name = req.session.name;
+        if(name) {
+            res.render(`createProduct`);
+        }else{
+            res.render('loginFail')
+        }
+        //else: access denied
+    });
 
     router.get('/logout', function (req, res) {
         req.session.destroy(function (err) {

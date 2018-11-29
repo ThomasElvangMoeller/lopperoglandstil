@@ -4,7 +4,7 @@ footer {
     display: grid;
     background-image: linear-gradient(transparent 10%, hsla(28, 100%, 86%));
     grid-gap: 20px;
-    grid-template-columns: 1fr 5px [start] 3fr [end] 5px 1fr;
+    grid-template-columns: 1fr 5px [start] repeat(3, 1fr) [end] 5px 1fr;
     width: 100%;
     margin-block-start: 5rem;
     padding-block-end: 2rem;

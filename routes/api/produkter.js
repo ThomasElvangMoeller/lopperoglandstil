@@ -71,10 +71,7 @@ router.post('/:id/uploadbilleder', upload.array('product'), async (req, res) => 
 
             await controller.addPictures(req.params.id, ids);
             console.log('file uploaded');
-            return res.send({
-                success:true,
-                _ids: ids 
-            })
+            return res.redirect('/admin/session?' + ids);
 
         } catch (error) {
             return res.send({
