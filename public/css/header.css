@@ -112,7 +112,7 @@
     display: block;
     padding: 10px;
     margin: 5px;
-    background-color: hsla(28, 100%, 86%, 0.50);
+    background-color: rgba(255, 136, 0, 0.3);
   }
 
   #fixedMenu > div > .menuItem:hover {
@@ -121,6 +121,7 @@
     border-right: 5px solid whitesmoke;
   }
 
+  /* =================== MOBILE SECTION ==================*/
   @media only screen and (max-width: 800px) {
     nav .navLinks {
         display: none;

@@ -55,3 +55,21 @@ footer {
     content: attr(data-descr);
     background-color: rgba(255, 136, 0, 0.3);
 }
+
+/* =================== TABLET & SMALL SCREEN SECTION ==================*/
+@media only screen and (max-width: 1200px) {
+    footer {
+      grid-template-columns: auto 20px [start] 1fr 1fr 1fr [end] 20px auto;
+    }
+  }
+  
+  /* =================== MOBILE SECTION ==================*/
+  @media only screen and (max-width: 800px) {
+    footer {
+      grid-template-columns: auto 5px [start] 1fr 1fr 1fr [end] 5px auto;
+    }
+
+    .socialmedia a::after {
+        display: none;
+    }
+  }
