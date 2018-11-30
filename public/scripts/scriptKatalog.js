@@ -8,7 +8,6 @@ onload = async () => {
     const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
     document.getElementById("products").innerHTML = compiledKatalogTemplate({product: katalogProductsJSON});
 
-
     
     const reserverButtons = document.getElementsByClassName("reservation");
     const reservationWindow = document.getElementById("reservationWindow");
@@ -24,4 +23,5 @@ onload = async () => {
         }
     }
     
+    footer();
 };
