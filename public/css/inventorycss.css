@@ -1,3 +1,13 @@
+
+
+body {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fffafa;
+}
+
+
 .inventory_tabledata {
     border: 1px rgba(130,130,131,0.62) solid;
     border-collapse: collapse;
@@ -46,8 +56,8 @@ tr.inventory_tablerow_header {
 }
 
 .inventory_product_outer {
-    position: fixed;
-    width: 25%;
+    /*position: fixed;*/
+    /*width: 25%;*/
     border-collapse: collapse;
 }
 
@@ -72,8 +82,10 @@ div.inventory_main {
 }
 
 div.inventory_specs {
+    position: fixed;
+    left: 75%;
     border: 2px #19530b solid;
-    width: 100%;
+    width: 24%;
     max-height: 100%;
     float: right;
     background-color: #f2f2f2;
@@ -87,7 +99,9 @@ div.inventory_specs {
     padding: 2ch;
     text-align: center;
     font-size: xx-large;
-    border: 2px #555555 solid;
+    border: 2px #19530b solid;
+    border-collapse: collapse;
     /*border-radius: 2%;*/
     height: 3em;
+    left: 0;
 }
