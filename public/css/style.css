@@ -27,7 +27,7 @@ body {
 /* =================== TABLET & SMALL SCREEN SECTION ==================*/
 @media only screen and (max-width: 1200px) {
   :root { font-size: 14px; }
-  
+
   #content {
     grid-template-columns: auto 20px [start] 1fr 1fr 1fr [end] 20px auto;
   }
