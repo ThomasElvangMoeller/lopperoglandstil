@@ -7,4 +7,7 @@ onload = async () => {
 
     const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
     document.getElementById("products").innerHTML = compiledKatalogTemplate({product: katalogProductsJSON});
+
+    // Imports script for footer
+    footer();
 };

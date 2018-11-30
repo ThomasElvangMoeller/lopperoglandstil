@@ -232,6 +232,7 @@ body {
 }
 
 #product-container .main-product-picture {
+  height: 600px;
   grid-column: 1/2;
   text-align: center;
 }
@@ -240,9 +241,14 @@ body {
   grid-column: 2/3;
 }
 
+.main-product-bigPictureBox {
+  height: 80%;
+  width: auto;
+  padding-top: 5%;
+}
+
 #main-product-bigPicture {
-  padding-top: 15px;
-  width: 90%;
+  height: 100%;
 }
 
 .main-product-mini-container {

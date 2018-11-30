@@ -4,12 +4,15 @@ onload = async () => {
     const splitURL = productURL.split('?');
     const ID = splitURL[1];
 
-    const katalogProducts = await fetch('/api/produkter/' + ID);
-    const katalogProductsJSON = await katalogProducts.json();
+    const productID = await fetch('/api/produkter/' + ID);
+    const productIdJSON = await productID.json();
 
-    const katalogTemplate = await fetch('/templates/productDescription.hbs');
-    const katalogTemplateText = await katalogTemplate.text();
+    const productTemplate = await fetch('/templates/productDescription.hbs');
+    const productTemplateText = await productTemplate.text();
 
-    const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
-    document.getElementById("product-container").innerHTML = compiledKatalogTemplate(katalogProductsJSON);
+    const compiledProductTemplate = Handlebars.compile(productTemplateText);
+    document.getElementById("product-container").innerHTML = compiledProductTemplate(productIdJSON);
+
+    // Imports script for footer
+    footer();
 };
