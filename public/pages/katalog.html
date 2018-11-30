@@ -6,6 +6,7 @@
     <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reservationWindow.css">
     <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
     <script src="scripts/scriptKatalog.js"></script>
 </head>
@@ -67,6 +68,18 @@
     </div>
 </div>
 
+<!--reservation window-->
+<div id="reservationWindow">
+    <button id="closeBtn"><img src="/imgs/crosslogo.png" height="24px"></button>
+
+    <h2><u>Reserver produkt</u></h2>
+    <h3 id="reserverProduct">Produkt: </h3>
+    <p>Antal: <input type="number" id="reserverAmount"><br></p>
+    <p>Email: <input type="email" id="reserverEmail"><br></p>
+    <p>Telefon nr.: <input type="text" id="reserverPhone"><br></p>
+    <p>Kommentare: <input type="text" id="reserverComments"><br></p>
+    <button>Reserver</button>
+</div>
 
 </body>
 </html>
