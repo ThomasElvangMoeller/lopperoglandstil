@@ -8,7 +8,7 @@
 </head>
 <body>
 <nav class="container">
-    <div class="navLinks"><a href="#">Rediger Produkt</a></div>
+    <div class="navLinks"><a href="#">Vis Produkter</a></div>
     <div class="navLinks"><a href="#">Opret Produkt</a></div>
 </nav>
 
@@ -17,7 +17,10 @@
     <div id="descriptionHolder"> <textarea rows="4" cols="25" id="description" placeholder="evt. Beskrivelse"></textarea> </div>
     <div id="amountHolder"><input id="amount" type="number" placeholder="Antal"></div>
     <div id="picHolder">
-        <input id="chosenPicture" type="file" name="product" required />
+        <input class="chosenPicture" type="file" name="product" accept="image/*" required/>
+    </div>
+    <div id="buttonHolder">
+    <button id="addInputFile" type="button">+</button>
     </div>
     <div id="categoryHolder"><input id="category" type="text" placeholder="Kategorier: adskil komma"></div>
     <div id="priceHolder"><input id="price" type="text" placeholder="Pris"></div>
