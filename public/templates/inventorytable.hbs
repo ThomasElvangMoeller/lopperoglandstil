@@ -16,7 +16,9 @@
             <td class="inventory_tabledata_num"> {{this.reservedAmount}} </td>
             <td class="inventory_tabledata"><ul class="inventory_categories">
                 {{#each this.categories}}
-                    <li class="inventory_categories_elements">{{this}}</li>
+                    {{#if this}}
+                        <li class="inventory_categories_elements">{{this}}</li>
+                    {{/if}}
                 {{/each}}
             </ul></td>
             <td class="inventory_tabledata_edit">

@@ -85,6 +85,7 @@ div.inventory_main {
 }
 
 div.inventory_specs {
+    padding: 2px;
     position: fixed;
     left: calc(75% + 2px);
     border: 2px #19530b solid;
@@ -114,4 +115,8 @@ div.inventory_specs {
     max-height: 40px;
     max-width: 40px;
     cursor: pointer;
+}
+
+.save_exit {
+    margin: 2px;
 }
