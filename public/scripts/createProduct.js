@@ -25,7 +25,6 @@ onload = () => {
 
         let json = await res.json();
                     productID = json.id;
-
         let upload ="/api/produkter/" + productID + "/uploadbilleder"
         console.log(chosenPic);
        let uploadForm = document.body.innerHTML +=`<form id = "theForm" action ="${upload}" enctype="multipart/form-data"  method="POST"></form>`
