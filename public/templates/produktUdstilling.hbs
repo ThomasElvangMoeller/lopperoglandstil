@@ -1,10 +1,9 @@
 {{#each product}}
-    <a href="product.html?{{this._id}}">
         <div class="products-content">
             <a href="product.html?{{this._id}}">
                 <div class="product-picturebox">
-                    <div class="bottomleft"><p class="product-name">{{this.name}}</p></div>
                     <img class="product-picture" src="/uploads/{{this.pictures.[0]}}.jpg">
+                    <div class="bottomleft"><p class="product-name">{{this.name}}</p></div>
                 </div>
             </a>
             <div class="products-price-reservation">
@@ -18,5 +17,4 @@
                 {{/if}}
             </div>
         </div>
-    </a>
 {{/each}}
