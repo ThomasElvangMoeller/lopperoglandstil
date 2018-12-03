@@ -14,12 +14,11 @@ onload = async () => {
     document.getElementById("closeBtn").onclick = () => {reservationWindow.style.display = "none";}
 
     for (btn of reserverButtons) {
+        const btnProduct = btn.dataset.product;
         btn.onclick = () => {
-            //reservationWindow.style.display = "block";
+            reservationWindow.style.display = "block";
+            document.getElementById("reserverProduct").innerHTML = `Produkt: ${btnProduct}`;
 
-            //document.getElementById("reserverProduct").innerHTML = `Produkt: ${button.dataset.product}`;
-
-            console.log(`Produkt: ${btn.dataset.product}` );
         }
     }
     navigation();
