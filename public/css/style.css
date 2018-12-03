@@ -152,6 +152,7 @@ body {
 .product-picturebox{
   width: 95%;
   margin: 2.5%;
+  height: 180px;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -232,7 +233,7 @@ body {
 }
 
 #product-container .main-product-picture {
-  height: 600px;
+  min-height: 300px;
   grid-column: 1/2;
   text-align: center;
 }

@@ -11,11 +11,11 @@
                 <div class="products-price">
                     <p>{{this.price}} kr.</p>
                 </div>
-                <div class="products-reservation">
-                    {{#if this.unique}}
+                {{#if this.unique}}
+                    <div class="products-reservation">
                         <a class="reservation" data-product="{{this.name}}" href="#">Reservér</a>
-                    {{/if}}
-                </div>
+                    </div>
+                {{/if}}
             </div>
         </div>
     </a>
