@@ -14,8 +14,8 @@
     background-size: cover;
     background-position: 200px, 0px;
   }
-  
-  .navbar {
+
+  #navbar {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -31,27 +31,27 @@
     text-align: center;
     margin: 40px 10%;
   }
-  
+
   nav .logo {
-    grid-column: 3/4; 
+    grid-column: 3/4;
     height: 150px;
     margin: 5px;
   }
-  
+
   nav .navLinks {
     padding: 10px;
     background-color: hsla(28, 100%, 86%, 0.70);
     max-height: 25px;
     min-height: 25px;
   }
-  
+
   nav > *, nav > * > * {
     font-size: 1.2rem;
     text-transform: uppercase;
     text-decoration: none;
     color: black;
   }
-  
+
   nav .navLinks a:hover {
     border-left: 2px solid whitesmoke;
     border-right: 2px solid whitesmoke;
@@ -60,7 +60,7 @@
 
   #fixedMenu {
     position: fixed;
-    display: none; 
+    display: none;
     background: url("/imgs/burgermenu_logo.png") no-repeat;
     background-size: cover;
     right: 30px;
@@ -69,8 +69,8 @@
     height: 70px;
     border: 3px solid rgb(221, 164, 114);
     border-radius: 30px;
-    
-    box-shadow: 6px 6px 20px 1px gray;  
+
+    box-shadow: 6px 6px 20px 1px gray;
   }
 
   #fixedMenu:hover {
@@ -85,13 +85,13 @@
     bottom: -5px;
     right: -5px;
     background-color: white;
-    background-image: linear-gradient(145deg, rgba(0,0,0,0), rgba(0,0,0,0.25)); 
+    background-image: linear-gradient(145deg, rgba(0,0,0,0), rgba(0,0,0,0.25));
     width: 15rem;
     padding: 30px 2px 70px 2px;
     text-align: center;
     border-radius: 10px;
     border: 2px solid rgb(163, 110, 63);
-    box-shadow: 6px 6px 20px 1px gray; 
+    box-shadow: 6px 6px 20px 1px gray;
 
     -webkit-transition: opacity 500ms, visibility 500ms;
     transition: opacity 500ms, visibility 500ms;
@@ -100,7 +100,7 @@
   #fixedMenu:hover > div {
     visibility: visible;
     opacity: 1;
-     
+
   }
 
   #fixedMenu > div > .menuLogo {
