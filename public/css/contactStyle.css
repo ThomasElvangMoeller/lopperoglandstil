@@ -24,7 +24,7 @@ label {
     alignment: left;
 }
 
-#submit {
+#button_submit {
     background-color: #3770b4; /* Green */
     border: none;
     color: white;
@@ -34,7 +34,7 @@ label {
     display: inline-block;
     font-size: 16px;
 }
-#submit:hover {
+#button_submit:hover {
     background-color: #1c3f66; /* Green */
     border: none;
     color: white;
