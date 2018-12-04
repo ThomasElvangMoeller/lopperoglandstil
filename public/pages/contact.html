@@ -7,9 +7,12 @@
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/contactStyle.css">
     <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
     <script src="scripts/navigationScript.js"></script>
     <script src="scripts/footerScript.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/mobileFooterAnimation.js"></script>
 </head>
 <body>
 
@@ -19,11 +22,38 @@
 
 </div>
 
-<nav id="fixedMenu">
+<nav id="fixedMenu"></nav>
+<!--content-->
+<div id="content">
+    <div id="title"><h1>Kontakt Lopper og landstil</h1></div>
+    <div id="subtitle"><h2>Har du er problem eller et spørgsmål? <br> Måske har du noget du vil af med? <br> Send en besked!</h2></div>
 
-</nav>
+    <p class="left">Lopper og Landstil<br>
+        v/Anja Hjorth Jensen<br>
+        Kjeldbækvej 1, Ørting<br>
+        8300 Odder<br>
+        Tlf: 41 60 46 49<br>
+        E-mail:<a href="mailto:info@lopperoglandstil.dk"> info@lopperoglandstil.dk</a>
+    </p>
+    <div content="right">
+        <div class="message_wrapper">
+            <h2 class="minititle">Bliv kontaktet af Lopper & Landstil</h2>
+            <label class="contact" for="contact_name">Dit Navn<br><input id="contact_name" type="text" class="contact_info"></label><br>
+            <label class="contact" for="contact_mail">Din E-Mail<br><input id="contact_mail" type="email" class="contact_info"></label><br>
+            <label class="contact" for="contact_phone">Tilføj dit telefonnummer hvis du gerne vil ringes op<br><input id="contact_phone" class="contact_info"></label><br>
+            <label class="contact" for="contact_message" >Din Besked<br><textarea id="contact_message" cols="64" rows="16"></textarea> </label><br>
+            <button id="button_submit">Send</button>
+        </div>
+    </div>
+    <p class="middle">
+        Vi glæder vi os til at se jer hos Lopper & Landstil!
+    </p>
 
 
+</div>
 
+
+<!--footer-->
+<footer id="footer"></footer>
 </body>
 </html>

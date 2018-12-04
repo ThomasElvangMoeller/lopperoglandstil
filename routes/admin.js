@@ -33,6 +33,15 @@ router.post('/', function (req, res) {
         //else: access denied
     });
 
+    router.get('/visProdukt', function(req, res){
+        const name = req.session.name;
+        if(name){
+            res.render('inventory');
+        }else{
+            res.render('loginFail');
+        }
+    });
+
     router.get('/createProduct', function (req, res) {
         const name = req.session.name;
         if(name) {
