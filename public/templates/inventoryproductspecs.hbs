@@ -1,14 +1,13 @@
 <div class="inventory_product_outer">
     {{#if product.pictures}}
-        <img src="/uploads/{{product.pictures.[0]}}.jpg" id="{{product._id}}" class="inventory_product_image">
+        <img src="/uploads/{{product.pictures.[0]}}.jpg" id="{{product._id}}" class="inventory_product_image"> <br>
     {{else}}
         <div class="no_image_found">
             Intet Billede Fundet
-        </div>
+        </div> <br>
     {{/if}}
-    <br>
     <span class="inventory_product_info"><b>Produkt navn:</b> {{product.name}}</span> <br> <br>
-    <span class="inventory_product_info"><b>Produkt beskrivelse:</b> {{product.description}}</span> <br> <br>
+    <span class="inventory_product_info"><b>Produkt beskrivelse:</b><br> {{product.description}}</span> <br> <br>
     <span class="inventory_product_info"><b>Sidst opdateret:</b> {{product.updated}}</span> <br> <br>
     <span class="inventory_product_info"><b>Oprettet:</b> {{product.created}}</span> <br> <br>
     <span class="inventory_product_info"><b>Antal på lager:</b> {{product.amount}}</span> <br> <br>

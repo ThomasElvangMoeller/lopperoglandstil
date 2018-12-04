@@ -21,8 +21,12 @@
     background-size: cover;
     background-position: 200px, 0px;
   }
-
-  .navbar {
+@media only screen and (max-width: 1200px) {
+  .headerimage {
+    height: 40%;
+  }
+}
+  #navbar {
     position: absolute;
     top: 0px;
     left: 0px;
