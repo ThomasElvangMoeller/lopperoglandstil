@@ -56,24 +56,24 @@ PUT: http://lopperoglandstil.dk/api/produkter/:id
 
 - Returnere et array med alle kategorier
 ```
-GET: http://localhost:8080/api/produktkategorier
+GET: http://lopperoglandstil.dk/produktkategorier
 ```
 
 - Opretter en ny kategori.
 Parametre:
 {name: String}
 ```
-POST: http://localhost:8080/api/produktkategorier
+POST: http://lopperoglandstil.dk/api/produktkategorier
 ```
 
 - Sletter en kategori
 ```
-DELETE: http://localhost:8080/api/produktkategorier/:kategori
+DELETE: http://lopperoglandstil.dk/api/produktkategorier/:kategori
 ```
 
  Returnere alle produkter der har denne kategori
 ```
-GET: http://localhost:8080/api/produktkategorier/:kategori
+GET: http://lopperoglandstil.dk/produktkategorier/:kategori
 ```
 
 
