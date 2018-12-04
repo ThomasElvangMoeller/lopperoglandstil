@@ -59,5 +59,3 @@ async function sendReservationMail() {
         document.getElementById('error').innerText = 'Fejl: Reservation forespørgsel ikke sendt. Prøv igen';
     }
 }
-
-};
