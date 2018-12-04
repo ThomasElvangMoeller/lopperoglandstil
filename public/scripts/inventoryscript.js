@@ -19,7 +19,7 @@ onload = async () =>{
 
 
     document.getElementById('link_to_front').onclick = () => {
-        window.location.href = '/';
+        window.location.href = '/admin/session';
     };
 
     function addFunctionToRows() {
