@@ -91,6 +91,34 @@ exports.addPictures = async (product_id, picture_ids) => {
   }
 }
 
+
+//--------------------Category------------------------
+const Category = require("../models/Category");
+// Create a category and save it to the database
+exports.createCategory = (name) => {
+  let category = new Category({
+    _id: name,
+  });
+  return category.save();
+};
+
+// Find and return all categories in the database
+exports.getCategories = async  () => {
+  let categories =  await Category.find().exec();
+  categories = categories.map((cat) => {return cat._id});
+  return categories;
+};
+
+// Delete a specific product and the pictures of the product
+exports.deleteCategory = async (name) => {
+  return Category.deleteOne({_id:name}).exec();
+}
+
+exports.getProductsFromCategory = async (category) => {
+  let products = await Product.find({ categories: category}).exec();
+  return products;
+}
+
 //------------------------------Login----------------------------------
 const Login = require("../models/Login");
 
