@@ -1,4 +1,4 @@
-onload = async () => {
+async function footer() {
   // Insert Footer Template
   const footerTemplate = await fetch('/templates/footer.hbs');
   const footerTemplateText = await footerTemplate.text();

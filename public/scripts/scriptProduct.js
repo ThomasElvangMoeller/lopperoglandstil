@@ -1,21 +1,19 @@
 onload = async () => {
-    const katalogProducts = await fetch('/api/produkter');
-    const katalogProductsJSON = await katalogProducts.json();
 
-    Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    const productURL = window.location.href;
+    const splitURL = productURL.split('?');
+    const ID = splitURL[1];
 
-        // var name = v1 + '';
+    const productID = await fetch('/api/produkter/' + ID);
+    const productIdJSON = await productID.json();
 
-        if(v1 === v2) {
-            return options.fn(this);
-        }
-        console.log('nope');
-        return options.inverse(this);
-    });
+    const productTemplate = await fetch('/templates/productDescription.hbs');
+    const productTemplateText = await productTemplate.text();
 
-    const katalogTemplate = await fetch('/templates/productDescription.hbs');
-    const katalogTemplateText = await katalogTemplate.text();
+    const compiledProductTemplate = Handlebars.compile(productTemplateText);
+    document.getElementById("product-container").innerHTML = compiledProductTemplate(productIdJSON);
 
-    const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
-    document.getElementById("product-container").innerHTML = compiledKatalogTemplate({product: katalogProductsJSON});
+    // Imports script for footer
+    navigation();
+    footer();
 };
