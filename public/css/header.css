@@ -7,6 +7,13 @@
     background-size: cover;
     background-position: 200px, 0px;
   }
+.headerimage-contact{
+  height: 80%;
+  width: 100%;
+  background: linear-gradient(transparent 90%, #fffafa), url("/imgs/contact_background.jpeg") no-repeat;
+  background-size: cover;
+  background-position: 200px, 0px;
+}
   .headerimage-katalog {
     height: 30%;
     width: 100%;
@@ -73,7 +80,7 @@
     height: 70px;
     border: 3px solid rgb(221, 164, 114);
     border-radius: 30px;
-
+    transition: bottom 0.3s;
     box-shadow: 6px 6px 20px 1px gray;
   }
 

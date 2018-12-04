@@ -1,6 +1,7 @@
 onload = async () => {
     navigation();
     footer();
+
     const katalogProducts = await fetch('/api/produkter');
     const katalogProductsJSON = await katalogProducts.json();
 
@@ -58,3 +59,5 @@ async function sendReservationMail() {
         document.getElementById('error').innerText = 'Fejl: Reservation forespørgsel ikke sendt. Prøv igen';
     }
 }
+
+};
