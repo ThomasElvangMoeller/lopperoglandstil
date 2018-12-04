@@ -73,7 +73,7 @@
     height: 70px;
     border: 3px solid rgb(221, 164, 114);
     border-radius: 30px;
-
+    transition: bottom 0.3s;
     box-shadow: 6px 6px 20px 1px gray;
   }
 
