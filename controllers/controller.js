@@ -42,7 +42,7 @@ exports.updateProduct = (id, reqbody) => {
   if (reqbody.discount) { updates.discount = reqbody.discount};
   if (reqbody.reservedAmount) { updates.reservedAmount = reqbody.reservedAmount};
 
-  Product.updateOne({_id: id}, updates,).exec();
+  Product.updateOne({_id: id}, updates).exec();
 }
 
 // Delete a specific product and the pictures of the product
