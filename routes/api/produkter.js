@@ -35,11 +35,7 @@ router.get('/:id/billeder', async function (req, res) {
     res.json(pictures);
 });
 
-router.get('/kategorier', async function (req, res) {
-
-})
-
-// Add a specific product to the database
+// Add a product to the database
 router.post('/', async function (req, res) {
     //product details specified in post request body in json
     try {
@@ -52,8 +48,8 @@ router.post('/', async function (req, res) {
         );
         res.send({success:true, id:product._id});
         
-    } catch (error) {
-        res.send({success:false, error: error});
+    } catch (err) {
+        res.send({success:false, error: err});
     }
 });
 

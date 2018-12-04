@@ -29,8 +29,10 @@ mongoose.connect(config.mlabMongoDB, {useNewUrlParser: true});
 // ROUTES FOR THE APP
 const adminRouter = require('./routes/admin');
 const produktRouter = require('./routes/api/produkter');
+const produktKategorierRouter = require('./routes/api/produktKategorier');
 const emailRouter = require('./routes/api/email');
 app.use('/api/produkter', produktRouter);
+app.use('/api/produktkategorier', produktKategorierRouter);
 app.use('/admin', adminRouter);
 app.use('/api/email', emailRouter);
 
