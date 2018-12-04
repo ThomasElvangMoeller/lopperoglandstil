@@ -2,7 +2,7 @@
 onload = () => {
     const name = document.body.querySelector("#name");
     const desciption = document.body.querySelector("#description");
-    const category = document.body.querySelector("#category");
+    const category = document.body.querySelector("#categories_input");
     const price = document.body.querySelector("#price");
     const amount = document.body.querySelector("#amount");
     const submit = document.body.querySelector("#submit");
@@ -70,5 +70,15 @@ onload = () => {
 
 
     };
+
+    async function populateDD() {
+        const url = "http://localhost:8080/api/produktkategorier";
+        const categories = new Set();
+        let res = await fetch(url);
+
+        for(let cat of res){
+            category.innerHTML = `<option value="${cat}">${cat}</option>`;
+        }
+    }
 
 };
