@@ -1,4 +1,7 @@
 onload = async () => {
+    navigation();
+    footer();
+
     const katalogProducts = await fetch('/api/produkter');
     const katalogProductsJSON = await katalogProducts.json();
 
@@ -21,6 +24,4 @@ onload = async () => {
 
         }
     }
-    navigation();
-    footer();
 };
