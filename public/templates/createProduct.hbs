@@ -14,27 +14,26 @@
 
 <div class="createContent">
     <div id="nameHolder"><input id="name" placeholder="Indtast Navn"></div>
-    <div id="descriptionHolder"> <textarea rows="4" cols="25" id="description" placeholder="evt. Beskrivelse"></textarea> </div>
+    <div id="priceHolder"><input id="price" type="text" placeholder="Pris"></div>
     <div id="amountHolder"><input id="amount" type="number" placeholder="Antal"></div>
+    <div id="descriptionHolder"> <textarea rows="4" cols="25" id="description" placeholder="evt. Beskrivelse"></textarea> </div>
     <div id="picHolder">
         <input class="chosenPicture" type="file" name="product" accept="image/*" required/>
     </div>
     <div id="buttonHolder">
     <button id="addInputFile" type="button">+</button>
     </div>
-    <div id="categoryHolder"><label><b>Kategorier: </b><select id="categories_input">
-
-    </select></label></div>
-    <div id="priceHolder"><input id="price" type="text" placeholder="Pris"></div>
+    <div id="categoryHolder"><label><b>Kategorier: </b><select id="categories_input" required>
+    </select><input type="button" id="category_add" value="+"></label>
+    <ul id="category_list">
+        {{#each product.categories}}
+            <li class="categorylistelem" id="{{this}}">{{this}}</li>
+        {{/each}}
+    </ul>
+    </div>
     <div id="submitHolder"><input id="submit" type="submit" value="Opret"></div>
     <div id="uniqueHolder">Unik Vare<input id="unique" type="checkbox" placeholder ="Unik Vare">  </div>
 </div>
-
-
-
-
-
-
 
 <a href="/admin/logout"> log ud</a>
 </body>

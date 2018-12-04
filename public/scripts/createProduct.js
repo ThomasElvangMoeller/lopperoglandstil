@@ -9,6 +9,8 @@ onload = () => {
     const unique = document.body.querySelector("#unique");
     const chosenPic = document.body.querySelector("#chosenPicture");
     const addInputFile = document.body.querySelector("#addInputFile");
+    const category_add = document.body.querySelector("#category_add");
+    const selected_category_list = document.body.querySelector("#category_list");
 
 
     let productID;
@@ -64,21 +66,27 @@ onload = () => {
             evt.preventDefault();
         });
         form.remove();
-
-
-
-
-
     };
+
+    category_add.onclick = function (){
+        let selected_category = category.value;
+
+        selected_category_list.innerHTML += `<li class="categorylistelem" id="${selected_category}">${selected_category}</li>`;
+    };
+
+    populateDD();
 
     async function populateDD() {
         const url = "http://localhost:8080/api/produktkategorier";
-        const categories = new Set();
-        let res = await fetch(url);
+        fetch(url)
+            .then(res => res.json())
+            .then(res =>{
+                console.log(res);
+                for(let cat of res) {
+                    category.innerHTML += `<option value="${cat}">${cat}</option>`;
 
-        for(let cat of res){
-            category.innerHTML = `<option value="${cat}">${cat}</option>`;
-        }
+                }
+            });
     }
 
 };
