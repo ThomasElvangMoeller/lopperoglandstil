@@ -54,6 +54,28 @@ Mulige parameter der kan opdateres er: <br>
 PUT: http://lopperoglandstil.dk/api/produkter/:id
 ```
 
+- Returnere et array med alle kategorier
+```
+GET: http://localhost:8080/api/produktkategorier
+```
+
+- Opretter en ny kategori.
+Parametre:
+{name: String}
+```
+POST: http://localhost:8080/api/produktkategorier
+```
+
+- Sletter en kategori
+```
+DELETE: http://localhost:8080/api/produktkategorier/:kategori
+```
+
+ Returnere alle produkter der har denne kategori
+```
+GET: http://localhost:8080/api/produktkategorier/:kategori
+```
+
 
 ###Medlemmer
 - Frank
