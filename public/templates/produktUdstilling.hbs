@@ -1,20 +1,22 @@
 {{#each product}}
+    <a href="product.html">
         <div class="products-content">
-            <a href="product.html?{{this._id}}">
+            <a href="product.html">
                 <div class="product-picturebox">
-                    <img class="product-picture" src="/uploads/{{this.pictures.[0]}}.jpg">
                     <div class="bottomleft"><p class="product-name">{{this.name}}</p></div>
+                    <img class="product-picture" src="/uploads/{{this.pictures.[0]}}.jpg">
                 </div>
             </a>
             <div class="products-price-reservation">
                 <div class="products-price">
                     <p>{{this.price}} kr.</p>
                 </div>
-                {{#if this.unique}}
-                    <div class="products-reservation">
-                        <a class="reservation" data-product="{{this.name}}" href="#">Reservér</a>
-                    </div>
-                {{/if}}
+                <div class="products-reservation">
+                    {{#if this.unique}}
+                        <a class="reservation" href="#">Reservér</a>
+                    {{/if}}
+                </div>
             </div>
         </div>
+    </a>
 {{/each}}

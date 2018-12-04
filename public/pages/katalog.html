@@ -2,23 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lopper & Landstil</title>
+    <title>Title</title>
     <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/reservationWindow.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
     <script src="scripts/scriptKatalog.js"></script>
-    <script src="scripts/navigationScript.js"></script>
-    <script src="scripts/footerScript.js"></script>
 </head>
 <body>
 
 <!--header-->
 <div class="headerimage-katalog"></div>
-<div id="navbar"></div>
-<nav id="fixedMenu"></nav>
+
+<div class="navbar">
+    <nav id="topnav">
+        <div class="navLinks">
+            <a href="index.html">Forside</a>
+        </div>
+        <div class="navLinks">
+            <a href="#">Hvem er jeg</a>
+        </div>
+        <div class="logo">
+            <a href="index.html"><img class="logo" src="/imgs/logo.png"> </a>
+        </div>
+        <div class="navLinks">
+            <a href="#">Kontakt</a>
+        </div>
+        <div class="navLinks">
+            <a href="katalog.html">Katalog</a>
+        </div>
+    </nav>
+</div>
 
 <!--content-->
 <div class="container">
@@ -53,24 +67,6 @@
     </div>
 </div>
 
-<!--reservation window-->
-<div id="reservationWindow">
-    <button id="closeBtn"><img src="/imgs/crosslogo.png" height="24px"></button>
-
-    <h2><u>Reserver produkt</u></h2>
-    <h3 id="reserverProduct">Produkt: </h3>
-    <table>
-        <tr><td><p>Antal:</td>      <td><input type="number" id="reserverAmount"></td></p></tr>
-        <tr><td><p>Email:</td>      <td><input type="email" id="reserverEmail"></td></p></tr>
-        <tr><td><p>Telefon nr.:</td><td><input type="text" id="reserverPhone"></td></p></tr>
-        <tr><td><p>Kommentare:</td> <td><textarea name="Text1" cols="20" rows="3"></textarea></td></p></tr>
-    </table>
-
-    <button>Reserver</button>
-</div>
-
-<!--footer-->
-<footer id="footer"></footer>
 
 </body>
 </html>

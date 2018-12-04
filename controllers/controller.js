@@ -1,10 +1,9 @@
 "use strict";
-const config = require('../config');
+
 const Product = require("../models/Product");
 const mongooseId = require('mongoose').Types.ObjectId;
 const fs = require('fs');
 
-//--------------------Products------------------------
 // Create a product and save it to the database
 exports.createProduct = (name, desc, amount, categories, price, unique = false) => {
   let product = new Product({
@@ -91,10 +90,11 @@ exports.addPictures = async (product_id, picture_ids) => {
   }
 }
 
-//------------------------------Login----------------------------------
+//------------------------------------------------------------------------
 const Login = require("../models/Login");
 
 // Create a login and save it to the database
+// TODO
 exports.createLogin = (username, password) => {
     let login = new Login({
         username: username,
@@ -104,29 +104,12 @@ exports.createLogin = (username, password) => {
 };
 
 // Find and return all logins in the database
+// TODO
 exports.getLogins = (name,pass) => {
     return Login.find({username: name, password: pass}).exec();
 };
 
 
-//----------------------------Reservations------------------------------
-const nodemailer = require('nodemailer');
 
-// Sends an email to the owner of the website notifying her that someone wants to make an reservation
-exports.sendReservationEmails = (reqbody) => {
-  const transporter = nodemailer.createTransport(config.transporter);
 
-  const mailOptions = {
-    from: reqbody.from,       // sender address
-    to: reqbody.to,           // list of receivers
-    subject: reqbody.subject, // Subject line
-    html: reqbody.html        // plain text body
-  };
 
-  transporter.sendMail(mailOptions, function (err, info) {
-    if(err)
-      throw err
-    else
-      console.log(info);
- });
-}
