@@ -1,4 +1,0 @@
-onload = async () => {
-    navigation();
-    footer();
-}

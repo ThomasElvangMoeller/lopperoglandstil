@@ -27,7 +27,7 @@ body {
 /* =================== TABLET & SMALL SCREEN SECTION ==================*/
 @media only screen and (max-width: 1200px) {
   :root { font-size: 14px; }
-
+  
   #content {
     grid-template-columns: auto 20px [start] 1fr 1fr 1fr [end] 20px auto;
   }
@@ -152,7 +152,6 @@ body {
 .product-picturebox{
   width: 95%;
   margin: 2.5%;
-  height: 180px;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -174,12 +173,15 @@ body {
   text-align: left;
   padding-left: 5.5%;
   overflow: hidden;
-  margin-left: -2.5%;
 }
 
 .product-name {
   margin-top: 5px;
   color: black;
+}
+
+.products-name {
+
 }
 
 .products-price-reservation {
@@ -230,7 +232,6 @@ body {
 }
 
 #product-container .main-product-picture {
-  min-height: 300px;
   grid-column: 1/2;
   text-align: center;
 }
@@ -239,14 +240,9 @@ body {
   grid-column: 2/3;
 }
 
-.main-product-bigPictureBox {
-  height: 80%;
-  width: auto;
-  padding-top: 5%;
-}
-
 #main-product-bigPicture {
-  height: 100%;
+  padding-top: 15px;
+  width: 90%;
 }
 
 .main-product-mini-container {
