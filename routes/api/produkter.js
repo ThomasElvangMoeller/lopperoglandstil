@@ -35,6 +35,10 @@ router.get('/:id/billeder', async function (req, res) {
     res.json(pictures);
 });
 
+router.get('/kategorier', async function (req, res) {
+
+})
+
 // Add a specific product to the database
 router.post('/', async function (req, res) {
     //product details specified in post request body in json
