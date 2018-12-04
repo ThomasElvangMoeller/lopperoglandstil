@@ -112,13 +112,13 @@ exports.getLogins = (name,pass) => {
 //----------------------------Reservations------------------------------
 const nodemailer = require('nodemailer');
 
-// Sends an email to the owner of the website notifying her that someone wants to make an reservation
-exports.sendReservationEmails = (reqbody) => {
+// Sends an email from the mail account specified in config file.
+exports.sendEmail = (reqbody) => {
   const transporter = nodemailer.createTransport(config.transporter);
 
   const mailOptions = {
     from: reqbody.from,       // sender address
-    to: reqbody.to,           // list of receivers
+    to: config.notifyEmail,   // list of receivers
     subject: reqbody.subject, // Subject line
     html: reqbody.html        // plain text body
   };

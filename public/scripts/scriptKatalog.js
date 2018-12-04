@@ -1,4 +1,6 @@
 onload = async () => {
+    navigation();
+    footer();
     const katalogProducts = await fetch('/api/produkter');
     const katalogProductsJSON = await katalogProducts.json();
 
@@ -18,9 +20,41 @@ onload = async () => {
         btn.onclick = () => {
             reservationWindow.style.display = "block";
             document.getElementById("reserverProduct").innerHTML = `Produkt: ${btnProduct}`;
-
+ 
         }
     }
-    navigation();
-    footer();
+
+
+    const submitReservation = document.getElementById("submitReservation");
+
+    submitReservation.onclick = sendReservationMail;
 };
+
+async function sendReservationMail() {
+    const antal = document.getElementById("reserverAmount").value;
+    const email = document.getElementById("reserverEmail").value;
+    const telefonnr = document.getElementById("reserverPhone").value;
+    const kommentare = document.getElementById("reserverComments").value;
+    const produkt = document.getElementById("reserverProduct").innerHTML;
+
+    const postBody = {
+        from: email,
+        html: ` ${produkt} <br> Antal : '${antal}' <br> Email : '${email}' <br> Telefonnr : '${telefonnr}' <br> Kommentare: '${kommentare}'`
+    };
+
+    let status = await fetch('/api/email/reservation', {method: 'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify(postBody)
+    });
+
+    let statusJSON = await status.json();
+
+    if(statusJSON.success){
+        document.getElementById('error').innerText = 'Reservation forespørgsel sendt';
+        setTimeout(function () {
+            location.reload();
+        }, 2000);
+    }else{
+        document.getElementById('error').innerText = 'Fejl: Reservation forespørgsel ikke sendt. Prøv igen';
+    }
+}

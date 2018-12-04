@@ -29,10 +29,10 @@ mongoose.connect(config.mlabMongoDB, {useNewUrlParser: true});
 // ROUTES FOR THE APP
 const adminRouter = require('./routes/admin');
 const produktRouter = require('./routes/api/produkter');
-const reservationerRouter = require('./routes/api/reservationer');
+const emailRouter = require('./routes/api/email');
 app.use('/api/produkter', produktRouter);
 app.use('/admin', adminRouter);
-app.use('/api/reservationer', reservationerRouter);
+app.use('/api/email', emailRouter);
 
 // START THE SERVER
 //use the herouko port if we're deploying there. if not: use local port.

@@ -4,12 +4,14 @@ config.mlabMongoDB = 'mongodb://sysadmin:simonlugterafost123@ds113454.mlab.com:1
 config.localPort = 8080;
 config.testMongoDB = 'mongodb://testmaster:tester123@ds115094.mlab.com:15094/lopperoglandstiltests';
 
-config.transporter = { //TODO
+config.transporter = { 
     service: 'gmail',
     auth: {
-      user: '',
-      pass: ''
+      user: 'noreply.lopperoglandstil@gmail.com',
+      pass: 'simonlugterafost123'
     }
 };
+
+config.notifyEmail = 'noreply.lopperoglandstil@gmail.com'
 
 module.exports = config;
