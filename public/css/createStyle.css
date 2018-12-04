@@ -73,7 +73,7 @@ nav{
 
 .createContent #picHolder{
     grid-column: 2/3;
-    grid-row: 6;
+    grid-row: 6/8;
     alignment: right;
 }
 
@@ -83,12 +83,20 @@ nav{
 
 .createContent #submitHolder{
     grid-column: 3/4;
-    grid-row: 7;
+    grid-row: 6;
+    margin-top: 40px;
 }
 
 .createContent #uniqueHolder{
     grid-column: 3/4;
     grid-row: 6;
+}
+
+.createContent #buttonHolder{
+    grid-column: 2/3;
+    grid-row: 5;
+    margin-top: 20%;
+    text-align: left;
 }
 
 
