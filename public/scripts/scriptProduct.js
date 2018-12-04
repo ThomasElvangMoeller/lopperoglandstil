@@ -14,5 +14,6 @@ onload = async () => {
     document.getElementById("product-container").innerHTML = compiledProductTemplate(productIdJSON);
 
     // Imports script for footer
+    navigation();
     footer();
 };
