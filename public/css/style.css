@@ -49,7 +49,7 @@ body {
   color: rgb(27, 27, 27);
 }
 
-#content #subtitle{
+.subtitle{
   grid-column: start / end;
   font-size: 1.3em;
   color: rgba(27, 27, 27, 0.9);
@@ -61,6 +61,17 @@ body {
 #content .right{ grid-column: 5 / end; }
 #content .spanleft{ grid-column: start / 5; }
 #content .spanright{ grid-column: 4 / end;}
+
+#content .facebook{
+  grid-column: 3 / 5;
+
+
+}
+
+#content .instagram {
+  grid-column: 5 / end;
+
+}
 
 #content p{
   margin-block-start: 0;
