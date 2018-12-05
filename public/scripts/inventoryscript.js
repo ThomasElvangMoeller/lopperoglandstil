@@ -130,7 +130,16 @@ onload = async () =>{
             }
         };
 
+
+
+
+
         document.getElementById('save').onclick = async function (){
+
+            let pictureData = await getPicturesFormData();
+
+            await fetch('/api/produkter/'+id+'/uploadbilleder', {method: 'POST', body: pictureData});
+
             let data = {};
             let p = product[currentRow-1];
 
@@ -173,4 +182,19 @@ onload = async () =>{
 
 };
 
+function pictureFunction(smallImg) {
+    let bigImg = document.getElementById("main-product-bigPicture");
+    bigImg.src = smallImg.src;
+}
 
+async function getPicturesFormData(){
+    let formData = new FormData();
+    let pictureUpload = document.getElementById('Inventory_product_upload');
+    if(pictureUpload.files.length) {
+        for (let i = 0; i < pictureUpload.files.length; i++) {
+            console.log(i);
+            await formData.append('product', pictureUpload.files[i])
+        }
+    }
+    return formData;
+}

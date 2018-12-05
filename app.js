@@ -37,7 +37,7 @@ app.use('/admin', adminRouter);
 app.use('/api/email', emailRouter);
 
 // START THE SERVER
-//use the herouko port if we're deploying there. if not: use local port.
+//use the heroku port if we're deploying there. if not: use local port.
 const port = process.env.PORT || config.localPort; 
 app.listen(port);
 console.log('Listening on port ' + port + ' ...');

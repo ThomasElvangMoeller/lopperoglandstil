@@ -1,6 +1,16 @@
 <div class="inventory_product_outer">
     {{#if product.pictures}}
-        <img src="/uploads/{{product.pictures.[0]}}.jpg" id="{{product._id}}" class="inventory_product_image"> <br>
+        <div class="main-product-picture">
+            <div class="main-product-bigPictureBox">
+                <img id="main-product-bigPicture" src="/uploads/{{product.pictures.[0]}}.jpg">
+            </div>
+            <br>
+            <div class="main-product-mini-container">
+                {{#each product.pictures}}
+                    <img src="/uploads/{{this}}.jpg" class="main-product-mini" onclick="pictureFunction(this);">
+                {{/each}}
+            </div>
+        </div>
     {{else}}
         <div class="no_image_found">
             Intet Billede Fundet
