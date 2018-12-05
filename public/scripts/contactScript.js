@@ -1,6 +1,8 @@
-onload = () =>{
+onload = async () =>{
 
-
+    navigation();
+    footer();
+    
     const submit = document.getElementById('button_submit');
 
     submit.onclick = sendMessage;
