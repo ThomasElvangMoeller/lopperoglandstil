@@ -213,21 +213,17 @@ body {
   border-top: 1px #dddddd solid;
 }
 
-.products-price {
+.products-price-reservation div {
   display: table-cell;
-  /*left: 16px;*/
-  width: 80%;
+  width: 33.33%;
+  text-align: center;
 }
 
-.products-reservation {
-  display: table-cell;
-  width: 20%;
-}
-
-.products-price p {
-  padding: 10px 0 10px 20%;
-  margin: 0;
-  font-size: large;
+.discount {
+  text-decoration:  line-through;
+  color: gray;
+  text-align: left;
+  padding-left: 5px;
 }
 
 .reservation {

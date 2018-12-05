@@ -2,6 +2,10 @@ onload = async () => {
     navigation();
     footer();
 
+    Handlebars.registerHelper("minus", function (a, b) {
+        return a - b;
+    });
+
     const katalogMenu = await fetch('/api/produktkategorier');
     let katalogMenuJSON = await katalogMenu.json();
 
@@ -19,6 +23,15 @@ onload = async () => {
     const ID = splitURL[1];
 
     if(ID == null || ID == undefined) {
+        const katalogProducts = await fetch('/api/produkter');
+        const katalogProductsJSON = await katalogProducts.json();
+
+        const katalogTemplate = await fetch('/templates/produktUdstilling.hbs');
+        const katalogTemplateText = await katalogTemplate.text();
+
+        const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
+        document.getElementById("products").innerHTML = compiledKatalogTemplate({product: katalogProductsJSON});
+    } else if(ID == "Tilbud"){
         const katalogProducts = await fetch('/api/produkter');
         const katalogProductsJSON = await katalogProducts.json();
 
