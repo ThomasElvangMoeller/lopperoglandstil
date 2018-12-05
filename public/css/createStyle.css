@@ -100,7 +100,12 @@ nav{
 }
 
 .categorylistelem{
-    margin-left: 55%;
+    margin-left: 50%;
+    text-align: right;
+}
+#category_list{
+    direction: rtl;
+    text-align: center;
 }
 
 

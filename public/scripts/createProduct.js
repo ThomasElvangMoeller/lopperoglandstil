@@ -12,6 +12,9 @@ onload = () => {
     const category_add = document.body.querySelector("#category_add");
     const selected_category_list = document.body.querySelector("#category_list");
 
+    let categories = new Set();
+
+
 
     let productID;
 
@@ -30,12 +33,18 @@ onload = () => {
 
     submit.onclick = async () => {
         console.log("button clicked")
-        let categories = category.value.split(", ");
+
+        let categoriesArray = []
+
+        categories.forEach(elem => {
+            categoriesArray.push(elem)
+        })
+
         const product = {
             name: name.value,
             desciption: desciption.value,
             amount: amount.value,
-            categories: categories,
+            categories: categoriesArray,
             price: price.value,
             unique: unique.value
         }
@@ -72,6 +81,7 @@ onload = () => {
         let selected_category = category.value;
 
         selected_category_list.innerHTML += `<li class="categorylistelem" id="${selected_category}">${selected_category}</li>`;
+        categories.add(selected_category);
     };
 
     populateDD();

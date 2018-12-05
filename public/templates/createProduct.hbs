@@ -27,7 +27,7 @@
     </select><input type="button" id="category_add" value="+"></label>
     <ul id="category_list">
         {{#each product.categories}}
-            <li class="categorylistelem" id="{{this}}">{{this}}</li>
+            <li class="categorylistelem" value="{{this}}" id="{{this}}">{{this}}</li>
         {{/each}}
     </ul>
     </div>
