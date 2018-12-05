@@ -135,6 +135,7 @@ body {
   width: 100%;
   text-align: left;
   font-size: larger;
+  text-decoration: none;
 }
 
 #menu-content li a:hover {
