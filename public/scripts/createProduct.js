@@ -11,8 +11,10 @@ onload = () => {
     const addInputFile = document.body.querySelector("#addInputFile");
     const category_add = document.body.querySelector("#category_add");
     const selected_category_list = document.body.querySelector("#category_list");
-    const submitNewCategory =document.body.querySelector("#submitCategory")
-    const categoryNameField =document.body.querySelector("#categoryNameField")
+    const submitNewCategory =document.body.querySelector("#submitCategory");
+    const categoryNameField =document.body.querySelector("#categoryNameField");
+    const deleteCategorySelector = document.body.querySelector("#category_delete");
+    const deleteCategory = document.body.querySelector("#category_delete_button");
 
     let categories = new Set();
 
@@ -89,7 +91,8 @@ onload = () => {
     populateDD();
 
     async function populateDD() {
-        category.innerHTML = ``
+        category.innerHTML = ``;
+        deleteCategorySelector.innerHTML = ``;
         const url = "http://localhost:8080/api/produktkategorier";
         fetch(url)
             .then(res => res.json())
@@ -97,14 +100,14 @@ onload = () => {
                 console.log(res);
                 for(let cat of res) {
                     category.innerHTML += `<option value="${cat}">${cat}</option>`;
-
+                    deleteCategorySelector.innerHTML += `<option value="${cat}">${cat}</option>`;
                 }
             });
     }
 
 
     submitNewCategory.onclick = async() =>{
-        const url = "http://localhost:8080/api/produktkategorier/"
+        const url = "http://localhost:8080/api/produktkategorier"
         const category ={name: categoryNameField.value}
         const JSONCat = JSON.stringify(category)
 
@@ -115,6 +118,11 @@ onload = () => {
         })
         populateDD();
         categoryNameField.value = "";
-    }
+    };
 
+    deleteCategory.onclick = async () =>{
+      let url = "/api/produktkategorier/" + deleteCategorySelector.value;
+      fetch(url, {method: "DELETE"});
+      populateDD();
+    };
 };
