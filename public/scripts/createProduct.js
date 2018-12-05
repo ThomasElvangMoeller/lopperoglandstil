@@ -11,6 +11,8 @@ onload = () => {
     const addInputFile = document.body.querySelector("#addInputFile");
     const category_add = document.body.querySelector("#category_add");
     const selected_category_list = document.body.querySelector("#category_list");
+    const submitNewCategory =document.body.querySelector("#submitCategory")
+    const categoryNameField =document.body.querySelector("#categoryNameField")
 
     let categories = new Set();
 
@@ -87,6 +89,7 @@ onload = () => {
     populateDD();
 
     async function populateDD() {
+        category.innerHTML = ``
         const url = "http://localhost:8080/api/produktkategorier";
         fetch(url)
             .then(res => res.json())
@@ -97,6 +100,21 @@ onload = () => {
 
                 }
             });
+    }
+
+
+    submitNewCategory.onclick = async() =>{
+        const url = "http://localhost:8080/api/produktkategorier/"
+        const category ={name: categoryNameField.value}
+        const JSONCat = JSON.stringify(category)
+
+        fetch(url,{
+            method: "POST",
+            body: JSONCat,
+            headers:{'Content-Type':'application/json'}
+        })
+        populateDD();
+        categoryNameField.value = "";
     }
 
 };
