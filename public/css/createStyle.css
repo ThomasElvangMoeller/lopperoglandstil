@@ -109,4 +109,12 @@ nav{
 }
 
 
+#createCatContainer{
+    border-top: 2px solid black;
+    padding-top: 5%;
+    grid-column: 3/4;
+    grid-row: 9;
+}
+
+
 
