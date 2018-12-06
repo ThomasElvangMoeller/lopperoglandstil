@@ -4,7 +4,7 @@ const router = express.Router();
 const mongooseId = require('mongoose').Types.ObjectId;
 
 
-// Send an email to the customer and the shop owner about the reservation
+// Send an email to the shop owner about the reservation
 router.post('/reservation', async function (req, res) { 
     req.body.subject = "Reservations forespørgsel";
 
@@ -20,6 +20,7 @@ router.post('/reservation', async function (req, res) {
     }
 })
 
+// Send an email to the shop owner with the contact information and message
 router.post('/kontakt', async function (req, res) {
     req.body.subject = "Kontakt forespørgsel";
 

@@ -4,7 +4,7 @@ onload = () => {
     const button = document.querySelector('#button');
     const error = document.querySelector('#error');
 
-
+    // Add functionality so that its possible to login by pressing enter
     password.addEventListener("keypress", function (e) {
         if(e.which == 13){
             button.click();
@@ -17,6 +17,7 @@ onload = () => {
         }
     })
 
+    // Request to login to the admin site
     button.onclick = async () => {
         const data = {name: name.value, password: password.value};
         const result = await fetch("/admin", {
