@@ -103,6 +103,7 @@
     border-radius: 10px;
     border: 2px solid rgb(163, 110, 63);
     box-shadow: 6px 6px 20px 1px gray;
+    z-index: +1;
 
     -webkit-transition: opacity 500ms, visibility 500ms;
     transition: opacity 500ms, visibility 500ms;
