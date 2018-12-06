@@ -1,22 +1,14 @@
 let currentRow = 0;
-let categories = new Set();
 let currentlyEditing = false;
+let currentPictureId = 0;
 
 onload = async () =>{
-    let [tabletemplate, producttemplate, productedittemplate, productsJSON] = await Promise.all([fetch('/templates/inventorytable.hbs'), fetch('/templates/inventoryproductspecs.hbs'), fetch('/templates/inventoryproductspecsedit.hbs'), fetch('/api/produkter')]);
-    let [tabletemplateText, producttemplateText, productEditTemplateText, product] = await Promise.all([tabletemplate.text(), producttemplate.text(), productedittemplate.text(), productsJSON.json()]);
+    let [tabletemplate, producttemplate, productedittemplate, productsJSON, categoriesJSON] = await Promise.all([fetch('/templates/inventorytable.hbs'), fetch('/templates/inventoryproductspecs.hbs'), fetch('/templates/inventoryproductspecsedit.hbs'), fetch('/api/produkter'), fetch('/api/produktkategorier')]);
+    let [tabletemplateText, producttemplateText, productEditTemplateText, product, categories] = await Promise.all([tabletemplate.text(), producttemplate.text(), productedittemplate.text(), productsJSON.json(), categoriesJSON.json()]);
     const compiledTableTemplate = Handlebars.compile(tabletemplateText);
     const compiledProductTemplate = Handlebars.compile(producttemplateText);
     const compiledProductEdit = Handlebars.compile(productEditTemplateText);
     document.getElementById('inventory_main').innerHTML = await compiledTableTemplate({product});
-
-    for (let e of product){
-        for (let c of e.categories){
-            if(/\S/.test(c))
-            categories.add(c.trim());
-        }
-    }
-
 
     document.getElementById('link_to_front').onclick = () => {
         window.location.href = '/admin/session';
@@ -69,6 +61,8 @@ onload = async () =>{
 
     async function editProduct(id) {
         let tempCategories = new Set();
+        currentPictureId = product[currentRow-1].pictures[0];
+        // console.log(currentPictureId);
 
         for(let c of product[currentRow-1].categories){
             if(/\S/.test(c)) //ensure the category is more than just whitespace
@@ -84,9 +78,9 @@ onload = async () =>{
 
         let categorieshtml = ""; //This shows already made categories
         categories.forEach(category => {
-            categorieshtml += '<option value="'+category+'">';
+            categorieshtml += '<option value="'+category+'">'+category+'</option>';
         });
-        document.getElementById('categories_datalist').innerHTML = categorieshtml;
+        document.getElementById('categories_input').innerHTML = categorieshtml;
 
         let productName = document.getElementById('inventory_product_edit_name');
         let productDesc = document.getElementById('inventory_product_edit_description');
@@ -101,19 +95,19 @@ onload = async () =>{
         let productCategoriesRemove = document.getElementById('categories_remove');
         let productCategoriesInput = document.getElementById('categories_input');
 
+
+
+
         productCategoriesAdd.onclick = function () {
-            let category = productCategoriesInput.value.trim();
-            if(/\S/.test(category)){
+            let category = productCategoriesInput.value;
+            tempCategories.add(category);
 
-                categories.add(category);
-                tempCategories.add(category);
+            let approved = "";
+            tempCategories.forEach(elem => {
+                approved += '<li id="individual_category_'+elem+'">'+elem+'</li>'
+            });
+            productCategories.innerHTML = approved;
 
-                let approved = "";
-                tempCategories.forEach(elem => {
-                    approved += '<li id="individual_category_'+elem+'">'+elem+'</li>'
-                });
-                productCategories.innerHTML = approved;
-            }
         };
 
         productCategoriesRemove.onclick = function () {
@@ -134,11 +128,12 @@ onload = async () =>{
 
 
 
-        document.getElementById('save').onclick = async function (){
+        document.getElementById('save').onclick = async function () {
 
             let pictureData = await getPicturesFormData();
 
             await fetch('/api/produkter/'+id+'/uploadbilleder', {method: 'POST', body: pictureData});
+
 
             let data = {};
             let p = product[currentRow-1];
@@ -192,7 +187,6 @@ async function getPicturesFormData(){
     let pictureUpload = document.getElementById('Inventory_product_upload');
     if(pictureUpload.files.length) {
         for (let i = 0; i < pictureUpload.files.length; i++) {
-            console.log(i);
             await formData.append('product', pictureUpload.files[i])
         }
     }
