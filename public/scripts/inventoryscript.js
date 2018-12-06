@@ -24,14 +24,14 @@ onload = async () =>{
             }
         }
         const bins = document.getElementsByClassName('icon_bin');
-        for (let i = 1, bin; bin = bins[i]; i++){
+        for (let i = 0, bin; bin = bins[i]; i++){
             bin.onclick = function () {
                 console.log(bin.id);
                 deleteProduct(bin.id);
             }
         }
         const edits = document.getElementsByClassName('icon_edit');
-        for (let i = 1, edit; edit = edits[i]; i++){
+        for (let i = 0, edit; edit = edits[i]; i++){
             edit.onclick = function () {
                 currentlyEditing = true;
                 console.log(edit.id);
