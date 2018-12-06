@@ -28,7 +28,7 @@ mongoose.connect(config.testMongoDB, {useNewUrlParser: true});
 
 // ROUTES FOR THE APP
 const adminRouter = require('../routes/admin');
-const produktRouter = require('../routes/api/produkter');
+const produktRouter = require('../routes/api/products');
 const storage = multer.diskStorage({
     destination: '/test/public/uploads',
     filename: function (request, file, callback) {

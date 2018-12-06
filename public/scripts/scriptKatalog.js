@@ -11,7 +11,7 @@ onload = async () => {
 
     katalogMenuJSON.sort();
 
-    const katalogMenuTemplate = await fetch('/templates/katalogmenu.hbs');
+    const katalogMenuTemplate = await fetch('/templates/catalogmenu.hbs');
     const katalogMenuTemplateText = await katalogMenuTemplate.text();
 
     const compiledKatalogMenuTemplate = Handlebars.compile(katalogMenuTemplateText);
@@ -26,7 +26,7 @@ onload = async () => {
         const katalogProducts = await fetch('/api/produkter');
         const katalogProductsJSON = await katalogProducts.json();
 
-        const katalogTemplate = await fetch('/templates/produktUdstilling.hbs');
+        const katalogTemplate = await fetch('/templates/productDisplay.hbs');
         const katalogTemplateText = await katalogTemplate.text();
 
         const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
@@ -35,7 +35,7 @@ onload = async () => {
         const katalogProducts = await fetch('/api/produkter');
         const katalogProductsJSON = await katalogProducts.json();
 
-        const katalogTemplate = await fetch('/templates/produktUdstilling.hbs');
+        const katalogTemplate = await fetch('/templates/productDisplay.hbs');
         const katalogTemplateText = await katalogTemplate.text();
 
         const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
@@ -53,7 +53,7 @@ onload = async () => {
             return 0;
         });
 
-        const katalogTemplate = await fetch('/templates/produktUdstilling.hbs');
+        const katalogTemplate = await fetch('/templates/productDisplay.hbs');
         const katalogTemplateText = await katalogTemplate.text();
 
         const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);

@@ -16,7 +16,7 @@ app.use(morgan('tiny'));            //Logs every request
 app.set('view engine', 'hbs');      //Setup the app view engine with hbs
 app.set('views', './public/templates');      //Set the folder where we store the views to render
 app.use(session({
-    secret: 'hemmelig', //note: weak encrypt key 
+    secret: 'secretHackerman', //note: weak encrypt key
     saveUninitialized: true, 
     resave: true
 }));
@@ -28,11 +28,11 @@ mongoose.connect(config.mlabMongoDB, {useNewUrlParser: true});
 
 // ROUTES FOR THE APP
 const adminRouter = require('./routes/admin');
-const produktRouter = require('./routes/api/produkter');
-const produktKategorierRouter = require('./routes/api/produktKategorier');
+const productRouter = require('./routes/api/products');
+const productCategoryRouter = require('./routes/api/productCategories');
 const emailRouter = require('./routes/api/email');
-app.use('/api/produkter', produktRouter);
-app.use('/api/produktkategorier', produktKategorierRouter);
+app.use('/api/produkter', productRouter);
+app.use('/api/produktkategorier', productCategoryRouter);
 app.use('/admin', adminRouter);
 app.use('/api/email', emailRouter);
 
