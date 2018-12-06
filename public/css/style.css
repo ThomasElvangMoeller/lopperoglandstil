@@ -165,11 +165,12 @@ body {
 
 .products-content {
   float: left;
-  /*background-color: rgba(0,0,0,0.05);*/
-  min-width: 300px;
-  width: 20%;
-  margin: 10px;
+  /*background-color: red;*/
+  min-width: 250px;
+  width: 14%;
+  margin: 15px;
   border: 1px #dddddd solid;
+  /*box-shadow: 5px 5px 10px lightgray;*/
 }
 
 .product-picturebox{
@@ -206,10 +207,11 @@ body {
 
 .products-price-reservation {
   display: table;
-  width: 90%;
+  width: 100%;
   margin-top: 3%;
   /*padding: 5px 5% 5px 5%;*/
   border-top: 1px #dddddd solid;
+  min-height: 60px;
 }
 
 .products-price-reservation div {
@@ -236,6 +238,24 @@ body {
 
 .reservation:hover, .reservation:active {
   background: linear-gradient(transparent 35%, #424242), green;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .product-menu {
+    display: none;
+    grid-column: 1/1;
+  }
+  .products {
+    grid-column: 2/8;
+  }
+  .kategori-arrow {
+
+  }
+  .mobile-product-menu {
+    
+  }
+
 }
 
 /* =================== PRODUCT SECTION ================== */
