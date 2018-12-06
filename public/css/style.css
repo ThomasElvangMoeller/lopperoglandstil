@@ -240,6 +240,13 @@ body {
   background: linear-gradient(transparent 35%, #424242), green;
 }
 
+#mobile-menu-content {
+  display: none;
+}
+
+#mobile-menu-content > div {
+  visibility: hidden;
+}
 
 @media only screen and (max-width: 800px) {
   .product-menu {
@@ -249,12 +256,42 @@ body {
   .products {
     grid-column: 2/8;
   }
-  .kategori-arrow {
 
+  #mobile-menu-content {
+    position: fixed;
+    display: block;
+    background: url("/imgs/burgermenu_logo.png") no-repeat;
+    background-size: cover;
+    left: 10px;
+    bottom: 45%;
+    width: 40px;
+    height: 10%;
+    border: 3px solid rgb(221, 164, 114);
+    border-radius: 30px;
+    transition: left 0.3s;
+    box-shadow: 6px 6px 20px 1px gray;
+    z-index: +1;
   }
-  .mobile-product-menu {
-    
+
+  #mobile-menu-content:hover {
+    left: 250px;
   }
+  #mobile-menu-content > div {
+    visibility: visible;
+    position: absolute;
+    height: 200px;
+    width: 250px;
+    left: -250px;
+    bottom: 0px;
+    background-image: linear-gradient(to right, red , green, blue, yellow);;
+    text-align: center;
+    transition: left 0.3s;
+  }
+
+  #mobile-menu-content:hover > div {
+    left: -255px;
+  }
+
 
 }
 
