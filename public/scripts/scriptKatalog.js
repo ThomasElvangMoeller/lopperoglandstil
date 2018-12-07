@@ -42,11 +42,15 @@ onload = async () => {
         const katalogProducts = await fetch('/api/produkter');
         const katalogProductsJSON = await katalogProducts.json();
 
+        const productsOnSale = katalogProductsJSON.filter((product) => {
+            return product.discount > 0;
+        });
+
         const katalogTemplate = await fetch('/templates/productDisplay.hbs');
         const katalogTemplateText = await katalogTemplate.text();
 
         const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
-        document.getElementById("products").innerHTML = compiledKatalogTemplate({product: katalogProductsJSON});
+        document.getElementById("products").innerHTML = compiledKatalogTemplate({product: productsOnSale});
     }else if(ID == "Special"){
         // Unique products category
         const katalogProducts = await fetch('/api/produkter');
