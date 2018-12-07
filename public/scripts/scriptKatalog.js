@@ -2,10 +2,7 @@ onload = async () => {
     navigation();
     footer();
 
-    Handlebars.registerHelper("minus", function (a, b) {
-        return a - b;
-    });
-
+    // ------------ Catalogue-Menu --------------
     const katalogMenu = await fetch('/api/produktkategorier');
     let katalogMenuJSON = await katalogMenu.json();
 
@@ -18,11 +15,19 @@ onload = async () => {
     document.getElementById("menu-content").innerHTML = compiledKatalogMenuTemplate({kategori: katalogMenuJSON});
 
 
+    // -------- Fill Catalouge with products ------------
+    // Get the category from the URL. http://www.baseling.dk/catalouge/CATEGORY 
     const productURL = window.location.href;
     const splitURL = productURL.split('?');
     const ID = splitURL[1];
 
+    // Teach handlebars to do simple math
+    Handlebars.registerHelper("minus", function (a, b) {
+        return a - b;
+    });
+
     if(ID == null || ID == undefined) {
+        // No category
         const katalogProducts = await fetch('/api/produkter');
         const katalogProductsJSON = await katalogProducts.json();
 
@@ -32,6 +37,7 @@ onload = async () => {
         const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
         document.getElementById("products").innerHTML = compiledKatalogTemplate({product: katalogProductsJSON});
     } else if(ID == "Tilbud"){
+        // Sales category
         const katalogProducts = await fetch('/api/produkter');
         const katalogProductsJSON = await katalogProducts.json();
 
@@ -41,6 +47,7 @@ onload = async () => {
         const compiledKatalogTemplate = Handlebars.compile(katalogTemplateText);
         document.getElementById("products").innerHTML = compiledKatalogTemplate({product: katalogProductsJSON});
     }else if(ID == "Special"){
+        // Unique products category
         const katalogProducts = await fetch('/api/produkter');
         const katalogProductsJSON = await katalogProducts.json();
 
@@ -51,9 +58,11 @@ onload = async () => {
         document.getElementById("products").innerHTML = compiledKatalogTemplate({product: katalogProductsJSON});
     }
     else{
+        // The categories that the owner created
         const katalogProducts = await fetch('/api/produktkategorier/' + ID);
         let katalogProductsJSON = await katalogProducts.json();
 
+        // Sort the products before presenting them in the catalouge
         katalogProductsJSON.sort(function(a, b){
             let x = a.name.toLowerCase();
             let y = b.name.toLowerCase();
@@ -70,8 +79,7 @@ onload = async () => {
     }
 
 
-
-
+    // -------------- Reservation popup ----------------    
     const reserverButtons = document.getElementsByClassName("reservation");
     const reservationWindow = document.getElementById("reservationWindow");
     document.getElementById("closeBtn").onclick = () => {reservationWindow.style.display = "none";}
@@ -91,6 +99,8 @@ onload = async () => {
     submitReservation.onclick = sendReservationMail;
 };
 
+
+// Send an request to server asking to send a notification to shop owner about a reservation
 async function sendReservationMail() {
     const antal = document.getElementById("reserverAmount").value;
     const email = document.getElementById("reserverEmail").value;
