@@ -147,6 +147,7 @@ body {
   width: 100%;
   text-align: left;
   font-size: larger;
+  text-decoration: none;
 }
 
 #menu-content li a:hover {
@@ -263,7 +264,7 @@ body {
     background: url("/imgs/burgermenu_logo.png") no-repeat;
     background-size: cover;
     left: 10px;
-    bottom: 45%;
+    top: 30%;
     width: 40px;
     height: 10%;
     border: 3px solid rgb(221, 164, 114);
@@ -279,10 +280,10 @@ body {
   #mobile-menu-content > div {
     visibility: visible;
     position: absolute;
-    height: 200px;
+    min-height: 200px;
     width: 250px;
-    left: -250px;
-    bottom: 0px;
+    left: -265px;
+    top: 0px;
     background-image: linear-gradient(to right, red , green, blue, yellow);;
     text-align: center;
     transition: left 0.3s;
@@ -292,6 +293,17 @@ body {
     left: -255px;
   }
 
+  #mobile-menu-content > div > ul > li {
+    text-decoration: none;
+  }
+  #mobile-menu-content > div > ul > li > a{
+    background-color: #B3A38F;
+    color: #ffffff;
+
+  }
+  #mobile-menu-content > div > ul > li > a > p {
+    margin: 0;
+  }
 
 }
 

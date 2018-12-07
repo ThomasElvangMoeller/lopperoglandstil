@@ -13,6 +13,7 @@ onload = async () => {
 
     const compiledKatalogMenuTemplate = Handlebars.compile(katalogMenuTemplateText);
     document.getElementById("menu-content").innerHTML = compiledKatalogMenuTemplate({kategori: katalogMenuJSON});
+    // document.getElementById("mobile-menu-content").innerHTML = compiledKatalogMenuTemplate({kategori: katalogMenuJSON});
 
 
     // -------- Fill Catalouge with products ------------
