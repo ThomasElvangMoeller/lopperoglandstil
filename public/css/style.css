@@ -116,6 +116,7 @@ body {
   grid-column: 2/8;
   width: 100%;
   background-color: #fffafa;
+  min-height: 710px;
 }
 
 .product-menu {
@@ -166,12 +167,10 @@ body {
 
 .products-content {
   float: left;
-  /*background-color: red;*/
   min-width: 250px;
   width: 14%;
   margin: 15px;
   border: 1px #dddddd solid;
-  /*box-shadow: 5px 5px 10px lightgray;*/
 }
 
 .product-picturebox{
@@ -269,7 +268,7 @@ body {
     height: 10%;
     border: 3px solid rgb(221, 164, 114);
     border-radius: 30px;
-    transition: left 0.3s;
+    transition: left 0.5s;
     box-shadow: 6px 6px 20px 1px gray;
     z-index: +1;
   }
@@ -277,32 +276,55 @@ body {
   #mobile-menu-content:hover {
     left: 250px;
   }
+  /*#mobile-menu-content > div {*/
+    /*visibility: visible;*/
+    /*position: absolute;*/
+    /*min-height: 200px;*/
+    /*width: 250px;*/
+    /*left: -265px;*/
+    /*top: 0px;*/
+    /*background-image: linear-gradient(to right, red , green, blue, yellow);;*/
+    /*text-align: center;*/
+    /*transition: left 0.3s;*/
+  /*}*/
   #mobile-menu-content > div {
     visibility: visible;
-    position: absolute;
+    position: fixed;
     min-height: 200px;
+    height: 100%;
     width: 250px;
-    left: -265px;
+    left: -270px;
     top: 0px;
-    background-image: linear-gradient(to right, red , green, blue, yellow);;
+    background-color: #dccdcc;
     text-align: center;
-    transition: left 0.3s;
+    transition: left 0.5s;
+  }
+
+  #mobile-menu-content > div > h1 {
+    margin-top: 40px;
+    font-size: larger;
   }
 
   #mobile-menu-content:hover > div {
-    left: -255px;
+    left: 0px;
   }
 
-  #mobile-menu-content > div > ul > li {
+  #mobile-menu-list {
+    list-style-type: none;
+    padding-left: 0px;
+  }
+  #mobile-menu-list > li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px gray solid;
+  }
+  #mobile-menu-list > li > a{
     text-decoration: none;
-  }
-  #mobile-menu-content > div > ul > li > a{
-    background-color: #B3A38F;
-    color: #ffffff;
 
   }
-  #mobile-menu-content > div > ul > li > a > p {
+  #mobile-menu-list > li > a > p {
     margin: 0;
+    color: #000000;
   }
 
 }
