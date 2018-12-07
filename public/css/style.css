@@ -386,6 +386,11 @@ body {
   font-size: 13px;
   color: gray;
 }
+
+#product-container p {
+  white-space: pre-wrap;
+}
+
 @media only screen and (max-width: 800px) {
   #product-container {
     display: grid;
@@ -402,6 +407,8 @@ body {
     grid-column: 2/3;
     min-width: 400px;
   }
+
+
   .main-product-description {
     width: 100%;
   }
