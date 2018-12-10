@@ -38,7 +38,12 @@ describe('Products', () => {
             chai.request(app)
                 .post('/api/produkter')
                 .set('content-type', 'application/json')
-                .send({name:'unittest name', desc:'unittest description', unique:false, amount:10, categories:['unittest category 1', 'unittest category 2'], price:100})
+                .send({name:'unittest name',
+                    desc:'unittest description',
+                    unique:false,
+                    amount:10,
+                    categories:['unittest category 1', 'unittest category 2'],
+                    price:100})
                 .end((err, res)=>{
                     res.should.have.status(200);
                     res.body.should.be.an('object');
