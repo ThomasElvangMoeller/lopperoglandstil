@@ -13,11 +13,11 @@ onload = async () => {
 
     const compiledKatalogMenuTemplate = Handlebars.compile(katalogMenuTemplateText);
     document.getElementById("menu-content").innerHTML = compiledKatalogMenuTemplate({kategori: katalogMenuJSON});
-    // document.getElementById("mobile-menu-content").innerHTML = compiledKatalogMenuTemplate({kategori: katalogMenuJSON});
+    document.getElementById("mobile-menu-list").innerHTML = compiledKatalogMenuTemplate({kategori: katalogMenuJSON});
 
 
     // -------- Fill Catalouge with products ------------
-    // Get the category from the URL. http://www.baseling.dk/catalouge/CATEGORY 
+    // Get the category from the URL. http://www.baseling.dk/catalouge/CATEGORY
     const productURL = window.location.href;
     const splitURL = productURL.split('?');
     const ID = splitURL[1];
@@ -88,7 +88,7 @@ onload = async () => {
     }
 
 
-    // -------------- Reservation popup ----------------    
+    // -------------- Reservation popup ----------------
     const reserverButtons = document.getElementsByClassName("reservation");
     const reservationWindow = document.getElementById("reservationWindow");
     document.getElementById("closeBtn").onclick = () => {reservationWindow.style.display = "none";}
