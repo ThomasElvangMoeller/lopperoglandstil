@@ -1,6 +1,7 @@
 /* =================== HEADER SECTION ================== */
 
 .headerimage {
+  min-width: 375px;
     height: 80%;
     width: 100%;
     background: linear-gradient(transparent 90%, #fffafa), url("/imgs/odderAvis1.jpg") no-repeat;
@@ -20,7 +21,7 @@
     width: 100%;
     background: linear-gradient(transparent 80%,#fffafa), url("/imgs/odderAvis8.jpg") no-repeat;
     background-size: cover;
-    background-position: 200px, 0px;
+    background-position: 200px, 0;
   }
 @media only screen and (max-width: 1200px) {
   .headerimage {
