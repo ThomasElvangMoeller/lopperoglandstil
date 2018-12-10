@@ -26,20 +26,25 @@ body {
   margin-block-start: 2em;
 }
 
+.social {
+  grid-column: start/end;
+}
+
+.social .left, .social .right{
+  float: left;
+  width: 48%;
+  min-width: 340px;
+  align-content: center;
+}
 
 #content .instagram-media {
-  grid-column: 5/6
-}
-
-#content .fb-page {
-  grid-column: 3/5;
-  width: auto;
-  min-width: 500px;
+  /*grid-column: 5/6*/
 }
 
 
 
-/* =================== TABLET & SMALL SCREEN SECTION ==================*/
+
+  /* =================== TABLET & SMALL SCREEN SECTION ==================*/
 @media only screen and (max-width: 1200px) {
   :root { font-size: 14px; }
 
@@ -47,13 +52,6 @@ body {
     grid-template-columns: auto 20px [start] 1fr 1fr 1fr [end] 20px auto;
   }
 
-  #content .fb-page {
-    grid-column: 3/6;
-  }
-
-  #content .instagram-media {
-    grid-column: 4/5;
-  }
 }
 
 /* =================== MOBILE SECTION ==================*/
@@ -62,6 +60,11 @@ body {
   #content {
     grid-template-columns: auto 5px [start] 1fr 1fr 1fr [end] 5px auto;
   }
+
+  .social {
+    grid-column: 2/8;
+  }
+
 }
 
 #content #title{
@@ -84,6 +87,8 @@ body {
 #content .right{ grid-column: 5 / end; }
 #content .spanleft{ grid-column: start / 5; }
 #content .spanright{ grid-column: 4 / end;}
+
+
 
 #content p{
   margin-block-start: 0;
