@@ -28,13 +28,13 @@ body {
 
 .social {
   grid-column: start/end;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .social .left, .social .right{
-  float: left;
-  width: 48%;
   min-width: 340px;
-  align-content: center;
 }
 
 #content .instagram-media {
@@ -62,7 +62,9 @@ body {
   }
 
   .social {
-    grid-column: 2/8;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 
 }
@@ -116,12 +118,13 @@ body {
   grid-gap: 10px;
 }
 
-
 #products {
   grid-column: 2/8;
   width: 100%;
   background-color: #fffafa;
-  min-height: 710px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .product-menu {
@@ -171,9 +174,7 @@ body {
 }
 
 .products-content {
-  float: left;
   min-width: 250px;
-  width: 14%;
   margin: 15px;
   border: 1px #dddddd solid;
 }
