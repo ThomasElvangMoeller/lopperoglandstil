@@ -31,7 +31,7 @@ let name = '', desciption = '', category = '', price = '', amount = '', submit =
 
 let categories = new Set();
 let productID;
-let url = 'http://localhost:8080/api/produkter';
+let url = '/api/produkter';
 
 // ------------------- Product -------------------
 // Create a new file input and add it to the form that submits the files(pictures) to the server
@@ -94,7 +94,7 @@ async function submitForm() {
 async function populateCategoryDropDown() {
     category.innerHTML = ``;
     deleteCategorySelector.innerHTML = ``;
-    const url = "http://localhost:8080/api/produktkategorier";
+    const url = "/api/produktkategorier";
     fetch(url)
         .then(res => res.json())
         .then(res =>{
@@ -118,7 +118,7 @@ function addCategory(){
 
 // Sends a request to the server to create a new category
 async function createCategory() {
-    const url = "http://localhost:8080/api/produktkategorier"
+    const url = "/api/produktkategorier"
     const category ={name: categoryNameField.value}
     const JSONCat = JSON.stringify(category)
 
