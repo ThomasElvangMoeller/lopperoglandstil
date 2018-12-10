@@ -16,12 +16,12 @@ label {
     color: rgba(27, 27, 27, 0.9);
 }
 .contact_info {
-    height: 3em;
+    padding: 5px 10px 5px 10px;
     width: 80%;
 }
-
-.message_wrapper {
-    alignment: left;
+.mapInfo {
+    align-content: center;
+    margin-bottom: 20px;
 }
 
 #button_submit {
@@ -33,6 +33,7 @@ label {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-bottom: 20px;
 }
 
 #button_submit:hover {

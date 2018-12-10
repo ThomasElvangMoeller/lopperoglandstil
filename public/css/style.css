@@ -89,8 +89,36 @@ body {
 #content .right{ grid-column: 5 / end; }
 #content .spanleft{ grid-column: start / 5; }
 #content .spanright{ grid-column: 4 / end;}
+#content .whole {
+  grid-column: 1/8;
+  background-color: #eecbad;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 
+#content > .middle > .middleText {
+  text-align: center;
+}
 
+#content .whole .wholeContent {
+  grid-column: start/end;
+}
+
+#content .whole .wholeContent label {
+  align-content: baseline;
+}
+#content .whole .wholeContent textarea {
+  min-width: 80%;
+  min-height: 200px;
+}
+
+#content > .whole > .wholeContent > .smallText {
+  font-size: small;
+  padding-bottom: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
 #content p{
   margin-block-start: 0;
@@ -411,4 +439,16 @@ body {
   .main-product-description {
     width: 100%;
   }
+}
+
+/* =================== Contact SECTION ================== */
+
+@media only screen and (max-width: 800px) {
+  .map {
+    display: none;
+  }
+}
+
+.textMap {
+  display: none;
 }
