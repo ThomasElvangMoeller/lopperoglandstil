@@ -26,7 +26,6 @@ onload = async () =>{
         const bins = document.getElementsByClassName('icon_bin');
         for (let i = 0, bin; bin = bins[i]; i++){
             bin.onclick = function () {
-                console.log(bin.id);
                 deleteProduct(bin.id);
             }
         }
@@ -34,7 +33,6 @@ onload = async () =>{
         for (let i = 0, edit; edit = edits[i]; i++){
             edit.onclick = function () {
                 currentlyEditing = true;
-                console.log(edit.id);
                 editProduct(edit.id);
             }
         }
@@ -47,7 +45,6 @@ onload = async () =>{
             currentRow = row;
             document.getElementById('inventory_specs').innerHTML = compiledProductTemplate({product: product[currentRow-1]})
         }
-        // console.log(currentRow);
     }
 
     async function deleteProduct(id) {
@@ -62,7 +59,6 @@ onload = async () =>{
     async function editProduct(id) {
         let tempCategories = new Set();
         currentPictureId = product[currentRow-1].pictures[0];
-        // console.log(currentPictureId);
 
         for(let c of product[currentRow-1].categories){
             if(/\S/.test(c)) //ensure the category is more than just whitespace
@@ -172,8 +168,6 @@ onload = async () =>{
         document.getElementById('inventory_main').innerHTML = await compiledTableTemplate({product});
         addFunctionToRows();
     }
-
-    // console.log(categories);
 
 };
 

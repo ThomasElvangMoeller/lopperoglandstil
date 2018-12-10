@@ -71,18 +71,14 @@ async function submitForm() {
     let json = await res.json();
     productID = json.id;
     let upload = "/api/produkter/" + productID + "/uploadbilleder"
-    console.log(chosenPic);
 
     const choices = document.body.querySelectorAll(".chosenPicture");
-    console.log(choices);
 
     let uploadForm = document.body.innerHTML += `<form id = "theForm" action ="${upload}" enctype="multipart/form-data"  method="POST"></form>`;
     const form = document.body.querySelector("#theForm");
 
     for(let i = 0; i < choices.length; i++){
         form.appendChild(choices[i]);
-        console.log(choices[i].value);
-        console.log(upload);
     }
     form.submit(function (evt) {
         evt.preventDefault();
@@ -98,7 +94,6 @@ async function populateCategoryDropDown() {
     fetch(url)
         .then(res => res.json())
         .then(res =>{
-            console.log(res);
             for(let cat of res) {
                 category.innerHTML += `<option value="${cat}">${cat}</option>`;
                 deleteCategorySelector.innerHTML += `<option value="${cat}">${cat}</option>`;
