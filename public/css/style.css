@@ -335,14 +335,16 @@ body {
   grid-column: 2/3;
 }
 
-.main-product-bigPictureBox {
+#main-product-bigPictureBox {
   height: 80%;
   width: auto;
   padding-top: 5%;
+  padding-left: 5%;
 }
 
 #main-product-bigPicture {
   height: 100%;
+  width: 100%;
 }
 
 .main-product-mini-container {
@@ -395,6 +397,9 @@ body {
     min-width: 400px;
   }
 
+  #main-product-bigPictureBox {
+    padding-left: 0;
+  }
 
   .main-product-description {
     width: 100%;
