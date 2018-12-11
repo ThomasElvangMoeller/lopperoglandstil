@@ -227,7 +227,7 @@ body {
   /*z-index: +1;*/
   background: rgba(255,255,255,0.5);
   width: 100%;
-  height: 20%;
+  height: 23%;
   text-align: left;
   padding-left: 5.5%;
   overflow: hidden;
@@ -254,6 +254,11 @@ body {
   text-align: center;
 }
 
+.price {
+  margin-left: 5px;
+  font-size: large;
+}
+
 .discount {
   text-decoration:  line-through;
   color: gray;
@@ -262,16 +267,26 @@ body {
 }
 
 .reservation {
-  padding: 3px 15px 3px 15px;
+  padding: 5px 15px 5px 15px;
   background: linear-gradient(transparent 35%, #B3A38F), #eedfcc;
   color: black;
   text-align: center;
   text-decoration: none;
   border-radius: 7px;
+  margin-right: 10px;
 }
 
 .reservation:hover, .reservation:active {
   background: linear-gradient(transparent 35%, #424242), green;
+}
+
+.bigReservation {
+  padding: 10px 15px 10px 15px;
+  background: linear-gradient(transparent 35%, #B3A38F), #eedfcc;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #000000;
 }
 
 #mobile-menu-content {
@@ -398,6 +413,10 @@ body {
 
 .main-product-description {
   width: 70%;
+}
+
+.main-product-description div {
+  padding-top: 20px ;
 }
 
 .main-product-price {
