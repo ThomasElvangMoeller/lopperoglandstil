@@ -58,9 +58,10 @@ nav .logo {
 }
 
 nav .navLinks {
+    white-space: nowrap;
     width: 100%;
     padding-top: 10px;
-    height: 32px;
+    min-height: 32px;
     background-color: #FFE5CD;
     /*background-color: #E6E2E2;*/
 }
@@ -72,14 +73,14 @@ nav > .navLinks > a {
 }
 
 nav > .navLinks > a {
-    font-size: 1.2rem;
+    font-size: 19px;
     text-transform: uppercase;
     text-decoration: none;
     color: black;
 }
 
 nav .navLinks a:hover {
-box-shadow: inset 0 -12px 10px -10px #9A856C;
+    box-shadow: inset 0 -15px 15px -10px #C0A686;
     transition: 0.3s;
 }
 
