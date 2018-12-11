@@ -15,7 +15,7 @@
         <p class="main-product-price">{{price}} kr.</p>
         {{#if unique}}
             <div>
-            <a href="#" class="bigReservation">Reserver</a>
+            <a id="reservation" data-product="{{name}}" href="#" class="bigReservation">Reserver</a>
             </div>
         {{/if}}
         <p class="main-product-status">Antal på lager: {{amount}} stk.</p>
