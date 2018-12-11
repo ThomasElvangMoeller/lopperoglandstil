@@ -61,14 +61,14 @@ nav .navLinks {
     width: 100%;
     padding-top: 10px;
     height: 32px;
-    /*background-color: #eecbad;*/
-    background-color: #E6E2E2;
+    background-color: #FFE5CD;
+    /*background-color: #E6E2E2;*/
 }
 
 nav > .navLinks > a {
     padding: 10px 40px 10px 40px;
-    /*background-color: #eecbad;*/
-    background-color: #E6E2E2;
+    background-color: #FFE5CD;
+    /*background-color: #E6E2E2;*/
 }
 
 nav > .navLinks > a {
