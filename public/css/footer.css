@@ -6,7 +6,8 @@ footer {
     width: 100%;
     /*padding-left: 10%;*/
     /*padding-right: 10%;*/
-    background-image: linear-gradient(transparent 10%, hsla(28, 100%, 86%));
+    background-image: linear-gradient(transparent 40%, #FFE5CD);
+    /*background-color: #ffd9b8;*/
 }
 
 #footerwrapper {
