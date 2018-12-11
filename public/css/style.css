@@ -277,7 +277,7 @@ body {
 }
 
 .reservation:hover, .reservation:active {
-  background: linear-gradient(transparent 35%, #424242), green;
+  background: linear-gradient(transparent 35%, #807466), #E6CFB1;
 }
 
 .bigReservation {
@@ -287,6 +287,9 @@ body {
   text-decoration: none;
   border-radius: 5px;
   color: #000000;
+}
+.bigReservation:hover, .bigReservation:active {
+  background: linear-gradient(transparent 35%, #807466), #E6CFB1;
 }
 
 #mobile-menu-content {
