@@ -1,0 +1,106 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fffafa;
+    font: 14px -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;
+}
+p {
+    font-size: 1.3em;
+    line-height: 1.5;
+}
+p.footer {
+    font-size: 16px;
+    line-height: normal;
+}
+h1 {
+    color: #404040;
+}
+
+h2 {
+    color: gray;
+}
+table {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 16px;
+}
+
+.header {
+    width: 100%;
+    min-height: 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30% , 0;
+}
+
+.header-index {
+    width: 100%;
+    min-height: 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30% , 0;
+    background-image: url("/imgs/odderAvis1.jpg");
+}
+ /*---------------------- menubar -----------------------*/
+.menubar {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: gray;
+}
+
+.menubar > nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menubar > nav > a {
+    padding: 10px 20px 10px 20px;
+    color: #000000;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+}
+.menubar > nav > a > img {
+    width: 200px;
+}
+
+/* ----------------------------------- container box -----------------------------------*/
+.mainContainer {
+    display: grid;
+    margin: auto;
+    grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66% ;
+    width: 65%;
+    min-height: 200px;
+}
+
+.mainContainer > .center-picture > img {
+    align-content: center;
+    border: 1px solid black;
+    padding: 0.6%;
+}
+
+.mainContainer > .full {grid-column: 1 / 7;}
+.mainContainer > .center-picture {grid-column: 1 / 7; text-align: center}
+.mainContainer > .two-span-right {grid-column: 4 / 7;}
+.mainContainer > .two-span-left {grid-column: 1 / 4;}
+.mainContainer > .centered-middle {grid-column: 2 / 6; text-align: center;}
+
+.mainContainer > .title {grid-column: 2 / 6; text-align: center; border-bottom: 1px solid gray}
+
+.mainContainer > .three-span-left {grid-column: 1 / 3; text-align: center;}
+.mainContainer > .three-span-middle {grid-column: 3 / 5; text-align: center;}
+.mainContainer > .three-span-right {grid-column: 5 / 7; text-align: center;}
+
+/*til test*/
+/*.mainContainer > .full {grid-column: 1 / 7; background-color: chocolate}*/
+/*.mainContainer > .center-picture {grid-column: 1 / 7; background-color: pink; text-align: center}*/
+/*.mainContainer > .two-span-right {grid-column: 4 / 7; background-color: darkgreen}*/
+/*.mainContainer > .two-span-left {grid-column: 1 / 4; background-color: darkslateblue}*/
+/*.mainContainer > .centered-middle {grid-column: 2 / 6; text-align: center; background-color: palevioletred}*/
+
+
+/*.mainContainer > .three-span-left {grid-column: 1 / 3; background-color: darkmagenta}*/
+/*.mainContainer > .three-span-middle {grid-column: 3 / 5; background-color: darkred}*/
+/*.mainContainer > .three-span-right {grid-column: 5 / 7; background-color: navy}*/
