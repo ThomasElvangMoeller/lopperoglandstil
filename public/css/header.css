@@ -33,57 +33,6 @@
         height: 40%;
     }
 }
-
-#navbar {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: +1;
-    width: 100%;
-}
-
-#topnav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-rows: auto;
-    align-items: center;
-    text-align: center;
-    margin: 40px 10%;
-}
-
-nav .logo {
-    grid-column: 3/4;
-    height: 150px;
-    margin: 5px;
-}
-
-nav .navLinks {
-    white-space: nowrap;
-    width: 100%;
-    padding-top: 10px;
-    min-height: 32px;
-    background-color: #FFE5CD;
-    /*background-color: #E6E2E2;*/
-}
-
-nav > .navLinks > a {
-    padding: 10px 40px 10px 40px;
-    background-color: #FFE5CD;
-    /*background-color: #E6E2E2;*/
-}
-
-nav > .navLinks > a {
-    font-size: 19px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: black;
-}
-
-nav .navLinks a:hover {
-    box-shadow: inset 0 -15px 15px -10px #C0A686;
-    transition: 0.3s;
-}
-
 #fixedMenu {
     position: fixed;
     display: none;
@@ -150,10 +99,6 @@ nav .navLinks a:hover {
 
 /* =================== MOBILE SECTION ==================*/
 @media only screen and (max-width: 800px) {
-    nav .navLinks {
-        display: none;
-    }
-
     #fixedMenu {
         display: block;
     }
