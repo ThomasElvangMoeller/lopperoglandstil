@@ -35,6 +35,7 @@ table {
     background-position: 30% , 0;
 }
 
+/* --------------------- Headers ----------------- */
 .header-index {
     width: 100%;
     min-height: 80%;
@@ -45,6 +46,7 @@ table {
     background-size: cover;
     background-position-y: 35%;
 }
+
  /*---------------------- menubar -----------------------*/
 .menubar {
     display: block;
@@ -161,3 +163,18 @@ table {
 /*.mainContainer > .three-span-left {grid-column: 1 / 3; background-color: darkmagenta}*/
 /*.mainContainer > .three-span-middle {grid-column: 3 / 5; background-color: darkred}*/
 /*.mainContainer > .three-span-right {grid-column: 5 / 7; background-color: navy}*/
+
+
+
+.mainProduktContainer {
+    display: grid;
+    margin: auto;
+    grid-template-columns: 200px auto ;
+    grid-gap: 20px 5px;
+    min-width: 800px;
+    width: 95%;
+    min-height: 200px;
+}
+
+.mainProduktContainer > .produkt-kategori { grid-column: 1 / 2;}
+.mainProduktContainer > .produkt-liste { grid-column: 2 / 3;}
