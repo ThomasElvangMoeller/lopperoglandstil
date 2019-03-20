@@ -38,10 +38,12 @@ table {
 .header-index {
     width: 100%;
     min-height: 80%;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
+    /*background-position: 30% , 0;*/
+    /*background-image: url("/imgs/odderAvis1.jpg");*/
+    background: linear-gradient(transparent 90%, #fffafa), url("/imgs/odderAvis1.jpg"), no-repeat;
     background-size: cover;
-    background-position: 30% , 0;
-    background-image: url("/imgs/odderAvis1.jpg");
+    background-position-y: 35%;
 }
  /*---------------------- menubar -----------------------*/
 .menubar {
