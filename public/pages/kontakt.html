@@ -5,23 +5,46 @@
     <meta name="viewport" content="width=device-width">
     <title>Kontakt</title>
     <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/header.css">-->
     <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
     <!--<link rel="stylesheet" type="text/css" href="css/footer.css">-->
     <!--<link rel="stylesheet" type="text/css" href="css/contactStyle.css">-->
-    <link rel="stylesheet" type="text/css" href="css/newSetup.css">
-    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
-    <script src="scripts/navigationScript.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>-->
+    <!--<script src="scripts/navigationScript.js"></script>-->
     <!--<script src="scripts/footerScript.js"></script>-->
     <!--<script src="scripts/mobileFooterAnimation.js"></script>-->
+    <!--<script src="scripts/contactScript.js"></script>-->
+
+
+    <link rel="stylesheet" type="text/css" href="css/newSetup.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/topNavigationBar.css">
     <script src="scripts/contactScript.js"></script>
+
 </head>
 <body>
 
 <!--header-->
 <div class="headerimage-contact"></div>
-<div id="navbar">
 
+<div id="navbar">
+    <nav id="topnav">
+        <div class="navLinks">
+            <a href="indexNew.html">Forside</a>
+        </div>
+        <div class="navLinks">
+            <a href="aboutMe.html">Om os</a>
+        </div>
+        <div class="logo">
+            <a href="indexNew.html"><img class="logo" src="/imgs/logo.png"> </a>
+        </div>
+        <div class="navLinks">
+            <a href="contact.html">Kontakt</a>
+        </div>
+        <div class="navLinks">
+            <a href="catalog.html">Katalog</a>
+        </div>
+    </nav>
 </div>
 
 <nav id="fixedMenu"></nav>
@@ -30,52 +53,156 @@
 
     <div class="title"><h1>Kontakt Lopper og landstil</h1></div>
 
-
     <div class="two-span-left">
-        <p>Kjeldbækvej 1, Ørting<br>
-            8300 Odder<br>
-            Tlf. 41 60 46 49 <br>
-            E-mail. info@lopperoglandstil.dk <br> <br>
+        <p>Vi gør opmærksom på at forretningen kun har åbent for mobilen i forretnings åbningstider
+            <br>
         </p>
-        <p><a class="textMap" href="https://goo.gl/maps/o1ueVUvwodH2">Google maps</a></p>
+
+        <div class="kontakt-tider">
+            <div>
+            <div><p>Ugedage</p></div>
+            <div><p>ÅbningsTider</p></div>
+        </div>
+            <div>
+                <div><p>Torsdag</p></div>
+                <div><p>14:00 – 18:00</p></div>
+            </div>
+            <div>
+                <div><p>Fredag</p></div>
+                <div><p>14:00 – 18:00</p></div>
+            </div>
+            <div>
+                <div><p>Lørdag</p></div>
+                <div><p>10:00 – 14:00</p></div>
+            </div>
+            <div>
+                <div><p>Søndag</p></div>
+                <div><p>11:00 – 15:00</p></div>
+            </div>
+
+        </div><br>
+
+        <p>Vi glæder vi os til at se jer hos Lopper & Landstil!</p>
+    </div>
+
+    <div class="two-span-right">
+        <p>Kjeldbækvej 1, 8300 Odder<br>
+            Tlf. 41 60 46 49 <br>
+            E-mail: info@lopperoglandstil.dk <br>
+        </p>
+
+        <p id="mobile-map"><a class="textMap" href="https://goo.gl/maps/o1ueVUvwodH2">Google maps</a></p>
 
         <div class="mapInfo">
-            <iframe class="map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2235.2964836190695!2d10.160447116093636!3d55.92689798601839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c5cf05570494d%3A0x8af7911d34e5c9c2!2sLopper+%26+Landstil!5e0!3m2!1sda!2sdk!4v1544474717606"
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d17882.373246837313!2d10.162636!3d55.926895!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8af7911d34e5c9c2!2sLopper+%26+Landstil!5e0!3m2!1sda!2sdk!4v1553083059900"
                     width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </div>
 
-    <div class="two-span-right">
+
+    <!--<div class="two-span-left">-->
+    <!--<p>Kjeldbækvej 1, Ørting<br>-->
+    <!--8300 Odder<br>-->
+    <!--Tlf. 41 60 46 49 <br>-->
+    <!--E-mail. info@lopperoglandstil.dk <br> <br>-->
+    <!--</p>-->
+    <!--<p><a class="textMap" href="https://goo.gl/maps/o1ueVUvwodH2">Google maps</a></p>-->
+
+    <!--<div class="mapInfo">-->
+    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d17882.373246837313!2d10.162636!3d55.926895!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8af7911d34e5c9c2!2sLopper+%26+Landstil!5e0!3m2!1sda!2sdk!4v1553083059900"-->
+    <!--width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="centered-middle">
+        <hr>
         <div class="subtitle">
-            <h2>Har du spørgsmål eller vil du høre mere omkring vores begivenheder? <br>Send en besked!</h2>
+            <h2>Har du spørgsmål eller vil du høre mere omkring vores begivenheder? <br><br>Send en besked</h2>
         </div>
 
-        <!--<h2 class="minititle">Bliv kontaktet af Lopper & Landstil</h2>-->
-        <label class="contact" for="contact_name">Dit Navn *<br><input id="contact_name" type="text"
-                                                                       class="contact_info"></label><br>
-        <label class="contact" for="contact_mail">Din E-Mail *<br><input id="contact_mail" type="email"
-                                                                         class="contact_info"></label><br>
-        <label class="contact" for="contact_phone">Dit telefonnummer<br><input id="contact_phone"
-                                                                               class="contact_info"></label><br>
-        <label class="contact" for="contact_message">Din Besked *<br><textarea id="contact_message"></textarea>
-        </label><br>
-        <p class="smallText"> felter med * skal udfyldes, telefonnr. bør kun udfyldes hvis du ønsker at blive ringet
+        <label class="contact" for="contact_name">Navn *<br></label>
+        <input id="contact_name" type="text" class="contact_info"><br>
+
+        <label class="contact" for="contact_mail">E-Mail *<br></label>
+        <input id="contact_mail" type="email" class="contact_info"><br>
+
+        <label class="contact" for="contact_phone">Telefonnummer<br></label>
+        <input id="contact_phone" class="contact_info"><br>
+
+        <label class="contact" for="contact_message">Besked *<br></label>
+        <textarea id="contact_message"></textarea> <br>
+        <p class="smallText"> * skal udfyldes
+            <br> telefonnummer bør kun udfyldes hvis du ønsker at blive ringet
             op for nærmere information</p>
         <button id="button_submit">Send</button>
         <span id="contact_status"></span>
     </div>
 
-    <div class="centered-middle">
-        <p class="middle">
-            Vi glæder vi os til at se jer hos Lopper & Landstil!
+    <!--<div class="centered-middle">-->
+    <!--<p class="middle">-->
+    <!--Vi gør opmærksom på at forretningen kun har åbent for mobilen i forretnings åbningstider-->
+    <!--<br>-->
+    <!--Vi er til rådighed på både mobil og mail, da vi er en fritids forretning er det dog begrænsning med åbning for mobil-->
+    <!--<br>-->
+    <!--Vi glæder vi os til at se jer hos Lopper & Landstil!-->
+    <!--</p>-->
+    <!--</div>-->
+
+    <!--footer-->
+
+    <div class="full">
+        <hr>
+    </div>
+    <div class="three-span-left">
+        <p>
+            <b>Lopper og landstil</b><br>
         </p>
+        <p class="footer">
+            v/Anja Hjorth Jensen <br>
+            Østerhøjgaard <br>
+            Kjeldbækvej 1, Ørting <br>
+            8300 Odder <br>
+            Tlf: 41 60 46 49 <br>
+            info@lopperoglandstil.dk<br>
+            CVR nr: 38435671 <br>
+        </p>
+    </div>
+    <div class="three-span-middle">
+        <p><b>Følg os:</b> <br></p>
+        <p>
+            <a data-descr="Facebook" href="https://www.facebook.com/LopperogLandstil/"><img src="imgs/fblogo.png"
+                                                                                            height="42" width="42"></a>
+            <br>
+            <a data-descr="Instagram" href="https://www.instagram.com/lopperoglandstil/"><img src="imgs/inslogo.png"
+                                                                                              height="42"
+                                                                                              width="42"></a>
+            <br>
+        </p>
+    </div>
+    <div class="three-span-right">
+        <p><b>Åbningstider:</b></p>
+
+        <table class="footerTable">
+            <tr>
+                <td>Torsdag</td>
+                <td>14:00 – 18:00</td>
+            </tr>
+            <tr>
+                <td>Fredag</td>
+                <td>14:00 – 18:00</td>
+            </tr>
+            <tr>
+                <td>Lørdag</td>
+                <td>10:00 – 14:00</td>
+            </tr>
+            <tr>
+                <td>Søndag</td>
+                <td>11:00 – 15:00</td>
+            </tr>
+        </table>
     </div>
 
 </div>
 
-
-<!--footer-->
-<footer id="footer"></footer>
 </body>
 </html>

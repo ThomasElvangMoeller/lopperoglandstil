@@ -6,7 +6,7 @@ body, html {
     font: 14px -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;
 }
 p {
-    font-size: 1.3em;
+    font-size: 1.1em;
     line-height: 1.5;
 }
 p.footer {
@@ -20,11 +20,7 @@ h1 {
 h2 {
     color: gray;
 }
-table {
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 16px;
-}
+
 
 .header {
     width: 100%;
@@ -71,6 +67,8 @@ table {
     display: grid;
     margin: auto;
     grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66% ;
+    grid-gap: 20px 5px;
+    min-width: 800px;
     width: 65%;
     min-height: 200px;
 }
@@ -79,6 +77,54 @@ table {
     align-content: center;
     border: 1px solid black;
     padding: 0.6%;
+}
+
+/* ------------------------------------- Kontakt ----------------------------------------*/
+
+.kontakt-tider {
+    display: table;
+    width: 300px;
+    padding: 5px
+}
+
+.kontakt-tider > div {
+    display: table-row;
+}
+
+.kontakt-tider > div:first-child {
+    background-color: lightblue;
+}
+
+.kontakt-tider > div > div {
+    display: table-cell;
+}
+
+.kontakt-tider > div > div > p {
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.mainContainer > .centered-middle > .contact_info {
+    width: 250px;
+}
+
+.mainContainer > .centered-middle > textarea {
+    min-width: 350px;
+    height: 150px;
+}
+
+.smallText {
+    font-size: small;
+    color: gray;
+}
+
+/*----------------------------------- footer -----------------------------------------*/
+
+.mainContainer > .three-span-right > .footerTable {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 16px;
 }
 
 .mainContainer > .full {grid-column: 1 / 7;}

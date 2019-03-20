@@ -4,32 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Lopper & Landstil</title>
-    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/newSetup.css">
-    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
-    <script src="scripts/navigationScript.js"></script>
-    <script src="scripts/mobileFooterAnimation.js"></script>
-    <script src="scripts/footerScript.js"></script>
-    <script src="scripts/index.js"></script>
+    <!--<link rel="icon" type="image/x-icon" href="imgs/favicon.ico">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/header.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/footer.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/newSetup.css">-->
+    <!--<script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>-->
+    <!--<script src="scripts/navigationScript.js"></script>-->
+    <!--<script src="scripts/mobileFooterAnimation.js"></script>-->
+    <!--<script src="scripts/footerScript.js"></script>-->
+    <!--<script src="scripts/index.js"></script>-->
+
+    <link rel="stylesheet" href="css/newSetup.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/topNavigationBar.css">
 </head>
 <body>
 
 <!--header-->
 <div class="headerimage"></div>
 
-
-<div class="menubar">
-    <nav>
-        <a href="index.html">Forside</a>
-        <a href="#">Om os</a>
-        <a href="index.html"><img src="imgs/logo.png"></a>
-        <a href="#">Kontakt</a>
-        <a href="#">Katalog</a>
+<div id="navbar">
+    <nav id="topnav">
+        <div class="navLinks">
+            <a href="indexNew.html">Forside</a>
+        </div>
+        <div class="navLinks">
+            <a href="aboutMe.html">Om os</a>
+        </div>
+        <div class="logo">
+            <a href="indexNew.html"><img class="logo" src="/imgs/logo.png"> </a>
+        </div>
+        <div class="navLinks">
+            <a href="contact.html">Kontakt</a>
+        </div>
+        <div class="navLinks">
+            <a href="catalog.html">Katalog</a>
+        </div>
     </nav>
 </div>
+
+
 <div class="mainContainer">
     <div class="title"><h1>Hvem er jeg</h1></div>
     <div class="full">
@@ -44,11 +59,65 @@
             Kig ind i en anderledes butik og bliv inspireret.
         </p>
     </div>
+
+
+    <!--footer-->
+
+    <div class="full">
+        <hr>
+    </div>
+    <div class="three-span-left">
+        <p>
+            <b>Lopper og landstil</b><br>
+        </p>
+        <p class="footer">
+            v/Anja Hjorth Jensen <br>
+            Østerhøjgaard <br>
+            Kjeldbækvej 1, Ørting <br>
+            8300 Odder <br>
+            Tlf: 41 60 46 49 <br>
+            info@lopperoglandstil.dk<br>
+            CVR nr: 38435671 <br>
+        </p>
+    </div>
+    <div class="three-span-middle">
+        <p><b>Følg os:</b> <br></p>
+        <p>
+            <a data-descr="Facebook" href="https://www.facebook.com/LopperogLandstil/"><img src="imgs/fblogo.png"
+                                                                                            height="42" width="42"></a>
+            <br>
+            <a data-descr="Instagram" href="https://www.instagram.com/lopperoglandstil/"><img src="imgs/inslogo.png"
+                                                                                              height="42" width="42"></a>
+            <br>
+        </p>
+    </div>
+    <div class="three-span-right">
+        <p><b>Åbningstider:</b></p>
+
+        <table>
+            <tr>
+                <td>Torsdag</td>
+                <td>14:00 – 18:00</td>
+            </tr>
+            <tr>
+                <td>Fredag</td>
+                <td>14:00 – 18:00</td>
+            </tr>
+            <tr>
+                <td>Lørdag</td>
+                <td>10:00 – 14:00</td>
+            </tr>
+            <tr>
+                <td>Søndag</td>
+                <td>11:00 – 15:00</td>
+            </tr>
+        </table>
+    </div>
 </div>
 
 
-<!--footer-->
-<footer id="footer"></footer>
+
+
 
 </body>
 </html>
