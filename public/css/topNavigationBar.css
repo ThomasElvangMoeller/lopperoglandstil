@@ -27,7 +27,7 @@ nav .navLinks {
     white-space: nowrap;
     width: 100%;
     padding-top: 10px;
-    min-height: 32px;
+    min-height: 36px;
     background-color: #FFE5CD;
     /*background-color: #E6E2E2;*/
 }
@@ -50,7 +50,7 @@ nav .navLinks a:hover {
     transition: 0.3s;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     nav .navLinks {
         display: none;
     }
