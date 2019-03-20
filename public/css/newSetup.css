@@ -21,6 +21,11 @@ h2 {
     color: gray;
 }
 
+table {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 16px;
+}
 
 .header {
     width: 100%;
@@ -105,6 +110,10 @@ h2 {
     margin-bottom: 5px;
 }
 
+#mobile-map {
+    display: none;
+}
+
 .mainContainer > .centered-middle > .contact_info {
     width: 250px;
 }
@@ -119,13 +128,13 @@ h2 {
     color: gray;
 }
 
-/*----------------------------------- footer -----------------------------------------*/
-
-.mainContainer > .three-span-right > .footerTable {
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 16px;
+#button_submit {
+    background-color: lightblue ;
+    padding: 3px 10px 3px 10px ;
+    border: 1px solid #404040;
 }
+
+
 
 .mainContainer > .full {grid-column: 1 / 7;}
 .mainContainer > .center-picture {grid-column: 1 / 7; text-align: center}
